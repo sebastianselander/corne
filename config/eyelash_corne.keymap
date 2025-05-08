@@ -135,7 +135,6 @@
             require-prior-idle-ms = <50>;
         };
       };
-    };
 
 
 behaviors {
@@ -272,6 +271,19 @@ behaviors {
         quick-tap-ms = <175>;
     };
 };
+    rgb_encoder: rgb_encoder {
+        compatible = "zmk,behavior-sensor-rotate";
+        #sensor-binding-cells = <0>;
+        bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
+    };
+
+    scroll_encoder: scroll_encoder {
+        compatible = "zmk,behavior-sensor-rotate";
+        #sensor-binding-cells = <0>;
+        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
+        tap-ms = <100>;
+    };
 
 #define HRM_A(key) hrm_left_pinky(key)
 #define HRM_S(key) hrm_left_ring(key)
@@ -283,7 +295,6 @@ behaviors {
 #define HRM_L(key) hrm_right_middle(key)
 #define HRM_SEMI(key) hrm_right_index(key)
 
-/ {
     keymap {
         compatible = "zmk,keymap";
         layer_base {
