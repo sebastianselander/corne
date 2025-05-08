@@ -10,6 +10,88 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
+// Eyelash corne key positions. Source missing
+    // |------------------------|------------------------|
+    // | LEFT_HAND_KEYS         |        RIGHT_HAND_KEYS |
+    // |                        |                        |
+    // | 0  1  2  3  4  5       |      6  7  8  9  10 11 |
+    // | 12 13 14 15 16 17      |      18 19 20 21 22 23 |
+    // | 24 25 26 27 28 29      |      30 31 32 33 34 35 |
+    // |          36 37 38      |      39 40 41          |
+    // |------------------------|------------------------|
+
+#define LEFT_HAND_KEYS    \
+        0  1  2  3  4  5  \
+        12 13 14 15 16 17 \
+        24 25 26 27 28 29 \
+                 36 37 38
+
+#define RIGHT_HAND_KEYS   \
+        6  7  8  9  10 11 \
+        18 19 20 21 22 23 \
+        30 31 32 33 34 35 \
+        39 40 41
+
+#define THUMB_KEYS 36 37 38 39 40 41
+
+/ {
+    macros {
+
+        // Create Å character in a macro using Alt-gr
+        ao_macro: ao_macro {
+            label = "&AO_MACRO";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>
+                , <&kp RALT>
+                , <&macro_tap>
+                , <&kp A>
+                , <&macro_release>
+                , <&kp RALT>
+                , <&macro_tap>
+                , <&kp A>;
+        };
+
+        // Create Ä character in a macro using Alt-gr
+        ae_macro: ae_macro {
+            label = "&AE_MACRO";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>
+                , <&kp RALT>
+                , <&macro_tap>
+                , <&kp A>
+                , <&macro_release>
+                , <&kp RALT>
+                , <&macro_press>
+                , <&kp LSHFT>
+                , <&macro_tap>
+                , <&kp SQT>
+                , <&macro_release>
+                , <&kp LSHFT>;
+        };
+
+        // Create Ö character in a macro using Alt-gr
+        oe_macro: oe_macro {
+            label = "&OE_MACRO";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>
+                , <&kp RALT>
+                , <&macro_tap>
+                , <&kp O>
+                , <&macro_release>
+                , <&kp RALT>
+                , <&macro_press>
+                , <&kp LSHFT>
+                , <&macro_tap>
+                , <&kp SQT>
+                , <&macro_release>
+                , <&kp LSHFT>;
+        };
+    };
+};
+
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
@@ -27,80 +109,192 @@
 };
 
 / {
-    behaviors {
-        td0: td0 {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Shift/Caps Lock Tap Dance";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+      combos {
+        compatible = "zmk,combos";
+        combo_ao_combo {
+            timeout-ms = <45>;
+            key-positions = <25 9>;
+            bindings = <&ao_macro>;
+            layers = <0>;
+            require-prior-idle-ms = <50>;
         };
+
+        combo_ae_combo {
+            timeout-ms = <45>;
+            key-positions = <25 15>;
+            bindings = <&ae_macro>;
+            layers = <0>;
+            require-prior-idle-ms = <50>;
+        };
+
+        combo_oe_combo {
+            timeout-ms = <45>;
+            key-positions = <15 9>;
+            bindings = <&oe_macro>;
+            layers = <0>;
+            require-prior-idle-ms = <50>;
+        };
+      };
     };
 
-    rgb_encoder: rgb_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
+
+behaviors {
+    lt {
+        flavor = "hold-preferred";
+    };
+    skq: sticky_key_quick {
+        compatible = "zmk,behavior-sticky-key";
+        #binding-cells = <1>;
+        bindings = <&kp>;
+        release-after-ms = <1000>;
+        quick-release;
+        ignore-modifiers;
+    };
+    lsd: left_shift_dance {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&skq LSHIFT>, <&caps_word>;
+    };
+    rpi: require_prior_idle {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+        quick-tap-ms = <250>;
+        require-prior-idle-ms = <100>;
+        bindings = <&kp>, <&kp>;
+    };
+    rpil: require_prior_idle_layer {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+        quick-tap-ms = <250>;
+        require-prior-idle-ms = <100>;
+        bindings = <&mo>, <&kp>;
+    };
+    hrm_left_pinky: hrm_left_pinky {
+        compatible = "zmk,behavior-hold-tap";
+        flavor = "tap-preferred";
+        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-on-release; // wait for other home row mods
+        tapping-term-ms = <240>;
+        quick-tap-ms = <250>;
+        require-prior-idle-ms = <100>;
+        #binding-cells = <2>;
+        bindings = <&kp>, <&kp>;
+    };
+    hrm_left_ring: hrm_left_ring {
+        compatible = "zmk,behavior-hold-tap";
+        flavor = "tap-preferred";
+        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-on-release; // wait for other home row mods
+        tapping-term-ms = <220>;
+        quick-tap-ms = <150>;
+        require-prior-idle-ms = <100>;
+        #binding-cells = <2>;
+        bindings = <&kp>, <&kp>;
+    };
+    hrm_left_middle: hrm_left_middle {
+        compatible = "zmk,behavior-hold-tap";
+        flavor = "tap-preferred";
+        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-on-release; // wait for other home row mods
+        tapping-term-ms = <200>;
+        quick-tap-ms = <150>;
+        require-prior-idle-ms = <100>;
+        #binding-cells = <2>;
+        bindings = <&kp>, <&kp>;
+    };
+    hrm_left_index: hrm_left_index {
+        compatible = "zmk,behavior-hold-tap";
+        flavor = "tap-preferred";
+        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-on-release; // wait for other home row mods
+        tapping-term-ms = <180>;
+        quick-tap-ms = <150>;
+        require-prior-idle-ms = <100>;
+        #binding-cells = <2>;
+        bindings = <&kp>, <&kp>;
     };
 
-    scroll_encoder: scroll_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
-        tap-ms = <100>;
+    hrm_right_pinky: hrm_right_pinky {
+        compatible = "zmk,behavior-hold-tap";
+        flavor = "tap-preferred";
+        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-on-release; // wait for other home row mods
+        tapping-term-ms = <240>;
+        quick-tap-ms = <250>;
+        require-prior-idle-ms = <100>;
+        #binding-cells = <2>;
+        bindings = <&kp>, <&kp>;
     };
+    hrm_right_ring: hrm_right_ring {
+        compatible = "zmk,behavior-hold-tap";
+        flavor = "tap-preferred";
+        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-on-release; // wait for other home row mods
+        tapping-term-ms = <220>;
+        quick-tap-ms = <150>;
+        require-prior-idle-ms = <100>;
+        #binding-cells = <2>;
+        bindings = <&kp>, <&kp>;
+    };
+    hrm_right_middle: hrm_right_middle {
+        compatible = "zmk,behavior-hold-tap";
+        flavor = "tap-preferred";
+        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-on-release; // wait for other home row mods
+        tapping-term-ms = <200>;
+        quick-tap-ms = <150>;
+        require-prior-idle-ms = <100>;
+        #binding-cells = <2>;
+        bindings = <&kp>, <&kp>;
+    };
+    hrm_right_index: hrm_right_index {
+        compatible = "zmk,behavior-hold-tap";
+        flavor = "tap-preferred";
+        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-on-release; // wait for other home row mods
+        tapping-term-ms = <180>;
+        quick-tap-ms = <150>;
+        require-prior-idle-ms = <100>;
+        #binding-cells = <2>;
+        bindings = <&kp>, <&kp>;
+    };
+    layer_hold_stickytap: layer_hold_stickytap {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        tapping-term-ms = <150>;
+        bindings = <&mo>, <&skq>;
+        flavor = "tap-preferred";
+        quick-tap-ms = <175>;
+    };
+};
 
+#define HRM_A(key) hrm_left_pinky(key)
+#define HRM_S(key) hrm_left_ring(key)
+#define HRM_D(key) hrm_left_middle(key)
+#define HRM_F(key) hrm_left_index(key)
+
+#define HRM_J(key) hrm_right_pinky(key)
+#define HRM_K(key) hrm_right_ring(key)
+#define HRM_L(key) hrm_right_middle(key)
+#define HRM_SEMI(key) hrm_right_index(key)
+
+\ {
     keymap {
         compatible = "zmk,keymap";
-
-        default_layer {
+        layer_base {
             display-name = "QWERTY";
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T                               &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&td0       &kp A  &kp S  &kp D     &kp F  &kp G                     &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp SPACE              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp LGUI  &mo 1  &lt 3 SPACE                                               &lt 3 ENTER  &mo 2  &kp RALT
+                &kp GRAVE   &kp Q        &kp W        &kp E         &kp R          &kp T                 &kp Y &kp U           &kp I         &kp O        &kp P           &kp BSPC
+                &ESC        &HRM_A(LGUI) &HRM_S(LALT) &HRM_D(LCTRL) &HRM_F(LSHIFT) &kp G                 &kp H &HRM_J(RSHIFT)  &HRM_K(RCTRL) &HRM_L(LALT) &HRM_SEMI(RGUI) &kp SQT
+                &skq LSHIFT &kp Z        &kp X        &kp C         &kp V          &kp B                 &kp N &kp M           &kp COMMA     &kp DOT      &kp FSLH        &kp ESC
+                                                      &none         &none          &none                 &none &none           &none
             >;
-
-             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
-
-           
-        };
-
-        lower_layer {
-            display-name = "NUMBER";
-            bindings = <
-&trans  &kp N1           &kp N2          &kp N3        &kp N4        &kp N5                                         &mmv MOVE_UP                     &kp N6           &kp N7           &kp N8           &kp N9           &kp N0    &kp BSPC
-&trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                   &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp PG_UP
-&trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans        &trans        &rgb_ug RGB_EFF  &kp C_MUTE                    &mmv MOVE_DOWN                   &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
-                                         &trans        &trans        &trans                                                                          &kp INS          &kp DEL          &trans
-            >;
-
-            sensor-bindings = <&scroll_encoder>;
-        };
-
-        raise_layer {
-            display-name = "SYMBOL";
-            bindings = <
-&trans  &kp EXCL      &kp AT        &kp HASH   &kp DLLR   &kp PRCNT                            &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&trans  &bt BT_CLR    &mkp LCLK     &mkp MCLK  &mkp RCLK  &mkp MB4             &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&trans  &out OUT_USB  &out OUT_BLE  &none      &none      &mkp MB5   &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                                    &trans     &trans     &kp SPACE                                                             &kp RET    &trans     &trans
-            >;
-
-            sensor-bindings = <&scroll_encoder>;
-        };
-
-        layer_3 {
-            display-name = "Fn";
-            bindings = <
-&studio_unlock  &kp F1      &kp F2     &kp F3       &kp F4     &kp F5                                  &mmv MOVE_UP                     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11
-&trans          &trans      &mkp LCLK  &mkp MCLK    &mkp RCLK  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  &kp F12
-&trans          &sys_reset  &trans     &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
-                                       &trans       &trans     &trans                                                                   &trans       &trans     &trans
-            >;
-
-            sensor-bindings = <&scroll_encoder>;
         };
     };
 };
+
