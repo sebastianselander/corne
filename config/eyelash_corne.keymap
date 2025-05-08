@@ -283,7 +283,7 @@ behaviors {
 #define HRM_L(key) hrm_right_middle(key)
 #define HRM_SEMI(key) hrm_right_index(key)
 
-\ {
+/ {
     keymap {
         compatible = "zmk,keymap";
         layer_base {
