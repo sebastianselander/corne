@@ -289,10 +289,10 @@ behaviors {
         layer_base {
             display-name = "QWERTY";
             bindings = <
-                &kp GRAVE   &kp Q        &kp W        &kp E         &kp R          &kp T                 &kp Y &kp U           &kp I         &kp O        &kp P           &kp BSPC
-                &ESC        &HRM_A(LGUI) &HRM_S(LALT) &HRM_D(LCTRL) &HRM_F(LSHIFT) &kp G                 &kp H &HRM_J(RSHIFT)  &HRM_K(RCTRL) &HRM_L(LALT) &HRM_SEMI(RGUI) &kp SQT
-                &skq LSHIFT &kp Z        &kp X        &kp C         &kp V          &kp B                 &kp N &kp M           &kp COMMA     &kp DOT      &kp FSLH        &kp ESC
-                                                      &none         &none          &none                 &none &none           &none
+                &kp GRAVE   &kp Q        &kp W        &kp E         &kp R          &kp T                    &none          &kp Y &kp U           &kp I         &kp O        &kp P           &kp BSPC
+                &ESC        &HRM_A(LGUI) &HRM_S(LALT) &HRM_D(LCTRL) &HRM_F(LSHIFT) &kp G              &none &none &none    &kp H &HRM_J(RSHIFT)  &HRM_K(RCTRL) &HRM_L(LALT) &HRM_SEMI(RGUI) &kp SQT
+                &skq LSHIFT &kp Z        &kp X        &kp C         &kp V          &kp B    &none           &none          &kp N &kp M           &kp COMMA     &kp DOT      &kp FSLH        &kp ESC
+                                                      &none         &none          &none                                   &none &none           &none
             >;
         };
     };
