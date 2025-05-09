@@ -326,9 +326,9 @@ behaviors {
         layer_Base {
             display-name = "QWERTY";
             bindings = <
-                &kp EXCL                      &kp Q                         &kp W                         &kp E                         &kp R                         &kp T                &none        &kp Y                         &kp U                         &kp I                         &kp O                         &kp P                         &kp LBKT
-                &kp ESC                       &HRM_A(LGUI)                  &HRM_S(LALT)                  &HRM_D(LCTRL)                 &HRM_F(LSHFT)                 &kp G          &none &none &none  &kp H                         &HRM_J(LSHFT)                 &HRM_K(RCTRL)                 &HRM_L(LALT)                  &HRM_SEMI(RGUI)               &kp SQT
-                &skp LSHFT                    &kp Z                         &kp X                         &kp C                         &kp V                         &kp B  &none         &none        &kp N                         &kp M                         &kp COMMA                     &kp DOT                       &kp SLASH                     &skp RSHFT
+                &kp EXCL                      &kp Q                         &kp W                         &kp E                         &kp R                         &kp T                             &kp Y                         &kp U                         &kp I                         &kp O                         &kp P                         &kp LBKT
+                &kp ESC                       &HRM_A(LGUI)                  &HRM_S(LALT)                  &HRM_D(LCTRL)                 &HRM_F(LSHFT)                 &kp G                             &kp H                         &HRM_J(LSHFT)                 &HRM_K(RCTRL)                 &HRM_L(LALT)                  &HRM_SEMI(RGUI)               &kp SQT
+                &skp LSHFT                    &kp Z                         &kp X                         &kp C                         &kp V                         &kp B                             &kp N                         &kp M                         &kp COMMA                     &kp DOT                       &kp SLASH                     &skp RSHFT
                                                                                                           &layer_hold_stickytap 3 LSHFT &layer_hold_tap 2 BSPC        &caps_word                        &kp TAB                       &layer_hold_tap 1 SPACE       &kp ENTER
             >;
 
@@ -339,9 +339,9 @@ behaviors {
         layer_Symbol {
              display-name = "SYMBOL";
              bindings = <
-                 &kp GRAVE  &kp AMPS   &kp SQT   &kp DQT         &kp PLUS    &kp QMARK                 &none        &kp GRAVE  &kp RSHFT  &kp RCTRL  &kp LALT   &kp RGUI   &none
-                 &kp HASH   &kp CARET  &kp EQUAL &kp UNDERSCORE  &kp DOLLAR  &kp STAR            &none &none &none  &kp DQT    &kp BSPC   &kp TAB    &kp SPACE  &kp ENTER  &none
-                 &kp TILDE  &kp LT     &kp PIPE  &kp MINUS       &kp GT      &kp SLASH   &none         &none        &kp SQT    &kp DEL    &kp COMMA  &kp DOT    &none      &none
+                 &kp GRAVE  &kp AMPS   &kp SQT   &kp DQT         &kp PLUS    &kp QMARK                              &kp GRAVE  &kp RSHFT  &kp RCTRL  &kp LALT   &kp RGUI   &none
+                 &kp HASH   &kp CARET  &kp EQUAL &kp UNDERSCORE  &kp DOLLAR  &kp STAR                               &kp DQT    &kp BSPC   &kp TAB    &kp SPACE  &kp ENTER  &none
+                 &kp TILDE  &kp LT     &kp PIPE  &kp MINUS       &kp GT      &kp SLASH                              &kp SQT    &kp DEL    &kp COMMA  &kp DOT    &none      &none
                                                  &kp PERCENT     &kp COLON   &kp AT                                 &none      &none      &none
              >;
              sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -350,9 +350,9 @@ behaviors {
         layer_Numpad {
              display-name = "NUMPAD";
              bindings = <
-                 &none      &kp LGUI     &kp LALT   &kp LCTRL    &kp LSHFT  &none                &none           &kp PERCENT   &kp N7    &kp N8    &kp N9    &kp COLON &none
-                 &none      &kp ENTER    &kp SPACE  &kp TAB      &kp BSPC   &none          &none &none &none     &kp PLUS      &kp N4    &kp N5    &kp N6    &kp MINUS &none
-                 &none      &none        &none      &none        &kp DEL    &none  &none         &none           &kp STAR      &kp N1    &kp N2    &kp N3    &kp SLASH &none
+                 &none      &kp LGUI     &kp LALT   &kp LCTRL    &kp LSHFT  &none                                &kp PERCENT   &kp N7    &kp N8    &kp N9    &kp COLON &none
+                 &none      &kp ENTER    &kp SPACE  &kp TAB      &kp BSPC   &none                                &kp PLUS      &kp N4    &kp N5    &kp N6    &kp MINUS &none
+                 &none      &none        &none      &none        &kp DEL    &none                                &kp STAR      &kp N1    &kp N2    &kp N3    &kp SLASH &none
                                                     &none        &none      &none                                &kp COMMA     &kp N0    &kp DOT
                                  
 
@@ -363,9 +363,9 @@ behaviors {
         layer_Navigation {
              display-name = "NAV";
              bindings = <
-                 &trans      &trans      &trans      &trans        &trans      &trans                   &none             &kp K_REDO    &kp K_PASTE  &kp K_COPY  &kp K_CUT &kp K_UNDO   &trans
-                 &trans      &kp LGUI    &kp LALT    &kp LCTRL     &kp LSHFT   &kp PSCRN         &none  &none  &none      &kp LEFT      &kp DOWN     &kp UP      &kp RIGHT &trans       &trans
-                 &trans      &trans      &trans      &trans        &trans      &trans     &none         &none             &kp HOME      &kp PG_DN    &kp PG_UP   &kp END   &trans       &trans
+                 &trans      &trans      &trans      &trans        &trans      &trans                                     &kp K_REDO    &kp K_PASTE  &kp K_COPY  &kp K_CUT &kp K_UNDO   &trans
+                 &trans      &kp LGUI    &kp LALT    &kp LCTRL     &kp LSHFT   &kp PSCRN                                  &kp LEFT      &kp DOWN     &kp UP      &kp RIGHT &trans       &trans
+                 &trans      &trans      &trans      &trans        &trans      &trans                                     &kp HOME      &kp PG_DN    &kp PG_UP   &kp END   &trans       &trans
                                          &trans      &trans        &trans                                                 &trans        &trans       &trans     
              >;
              sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -373,9 +373,9 @@ behaviors {
 
         layer_none {
              bindings = <
-                &none &none &none &none &none &none                &none        &none &none &none &none &none &none
-                &none &none &none &none &none &none          &none &none &none  &none &none &none &none &none &none
-                &none &none &none &none &none &none  &none         &none        &none &none &none &none &none &none
+                &none &none &none &none &none &none                             &none &none &none &none &none &none
+                &none &none &none &none &none &none                             &none &none &none &none &none &none
+                &none &none &none &none &none &none                             &none &none &none &none &none &none
                                   &none &none &none                             &none &none &none
              >;
              sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -383,4 +383,3 @@ behaviors {
 
     };
 };
-
