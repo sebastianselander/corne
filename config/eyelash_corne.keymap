@@ -137,6 +137,12 @@
       };
 
 
+#define QUICKTAPMS 300
+#define INDEX_TAPPINGTERM 180
+#define MIDDLE_TAPPINGTERM 200
+#define RING_TAPPINGTERM 220
+#define PINKY_TAPPINGTERM 240
+
 behaviors {
     lt {
         flavor = "hold-preferred";
@@ -160,7 +166,7 @@ behaviors {
         #binding-cells = <2>;
         flavor = "tap-preferred";
         tapping-term-ms = <200>;
-        quick-tap-ms = <250>;
+        quick-tap-ms = <QUICKTAPMS>;
         require-prior-idle-ms = <100>;
         bindings = <&kp>, <&kp>;
     };
@@ -169,7 +175,7 @@ behaviors {
         #binding-cells = <2>;
         flavor = "tap-preferred";
         tapping-term-ms = <200>;
-        quick-tap-ms = <250>;
+        quick-tap-ms = <QUICKTAPMS>;
         require-prior-idle-ms = <100>;
         bindings = <&mo>, <&kp>;
     };
@@ -178,8 +184,8 @@ behaviors {
         flavor = "tap-preferred";
         hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
-        tapping-term-ms = <240>;
-        quick-tap-ms = <250>;
+        tapping-term-ms = <PINKY_TAPPINGTERM>;
+        quick-tap-ms = <QUICKTAPMS>;
         require-prior-idle-ms = <100>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
@@ -189,8 +195,8 @@ behaviors {
         flavor = "tap-preferred";
         hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
-        tapping-term-ms = <220>;
-        quick-tap-ms = <150>;
+        tapping-term-ms = <RING_TAPPINGTERM>;
+        quick-tap-ms = <QUICKTAPMS>;
         require-prior-idle-ms = <100>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
@@ -200,8 +206,8 @@ behaviors {
         flavor = "tap-preferred";
         hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
-        tapping-term-ms = <200>;
-        quick-tap-ms = <150>;
+        tapping-term-ms = <MIDDLE_TAPPINGTERM>;
+        quick-tap-ms = <QUICKTAPMS>;
         require-prior-idle-ms = <100>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
@@ -211,8 +217,8 @@ behaviors {
         flavor = "tap-preferred";
         hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
-        tapping-term-ms = <180>;
-        quick-tap-ms = <150>;
+        tapping-term-ms = <INDEX_TAPPINGTERM>;
+        quick-tap-ms = <QUICKTAPMS>;
         require-prior-idle-ms = <100>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
@@ -223,8 +229,8 @@ behaviors {
         flavor = "tap-preferred";
         hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
-        tapping-term-ms = <240>;
-        quick-tap-ms = <250>;
+        tapping-term-ms = <PINKY_TAPPINGTERM>;
+        quick-tap-ms = <QUICKTAPMS>;
         require-prior-idle-ms = <100>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
@@ -234,8 +240,8 @@ behaviors {
         flavor = "tap-preferred";
         hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
-        tapping-term-ms = <220>;
-        quick-tap-ms = <150>;
+        tapping-term-ms = <RING_TAPPINGTERM>;
+        quick-tap-ms = <QUICKTAPMS>;
         require-prior-idle-ms = <100>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
@@ -245,8 +251,8 @@ behaviors {
         flavor = "tap-preferred";
         hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
-        tapping-term-ms = <200>;
-        quick-tap-ms = <150>;
+        tapping-term-ms = <MIDDLE_TAPPINGTERM>;
+        quick-tap-ms = <QUICKTAPMS>;
         require-prior-idle-ms = <100>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
@@ -256,8 +262,8 @@ behaviors {
         flavor = "tap-preferred";
         hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
-        tapping-term-ms = <180>;
-        quick-tap-ms = <150>;
+        tapping-term-ms = <INDEX_TAPPINGTERM>;
+        quick-tap-ms = <QUICKTAPMS>;
         require-prior-idle-ms = <100>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
@@ -268,7 +274,7 @@ behaviors {
         tapping-term-ms = <150>;
         bindings = <&mo>, <&skp>;
         flavor = "tap-preferred";
-        quick-tap-ms = <175>;
+        quick-tap-ms = <QUICKTAPMS>;
     };
     layer_hold_tap: layer_hold_tap {
         compatible = "zmk,behavior-hold-tap";
@@ -276,7 +282,7 @@ behaviors {
         tapping-term-ms = <150>;
         bindings = <&mo>, <&kp>;
         flavor = "tap-preferred";
-        quick-tap-ms = <175>;
+        quick-tap-ms = <QUICKTAPMS>;
     };
 };
     rgb_encoder: rgb_encoder {
