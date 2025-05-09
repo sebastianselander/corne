@@ -300,9 +300,9 @@ behaviors {
         layer_base {
             display-name = "QWERTY";
             bindings = <
-                    &none     &kp Q     &kp W     &kp E      &kp R     &kp T                   &none              &kp Y     &kp U      &kp I         &kp O       &kp P        &kp LBKT
-                    &kp ESC   &kp A     &kp S     &kp D      &kp F     &kp G             &none &none &none        &kp H     &kp J      &kp K         &kp L       &kp SEMI     &kp SQT 
-                    &none     &kp Z     &kp X     &kp C      &kp V     &kp B     &none         &none              &kp N     &kp M      &kp COMMA     &kp DOT     &kp FSLH     &none
+                    &none     &kp Q                      &kp W                      &kp E                               &kp R                               &kp T                   &none              &kp Y     &kp U      &kp I         &kp O       &kp P        &kp LBKT
+                    &kp ESC   &hrm_left_pinky LGUI A     &hrm_left_ring LALT S      &hrm_left_middle LCTRL D            &hrm_left_index LSHIFT F            &kp G             &none &none &none        &kp H     &kp J      &kp K         &kp L       &kp SEMI     &kp SQT 
+                    &none     &kp Z                      &kp X                      &kp C                               &kp V                               &kp B     &none         &none              &kp N     &kp M      &kp COMMA     &kp DOT     &kp FSLH     &none
                                         &kp BSPC  &kp LSHIFT &caps_word                                           &kp TAB   &kp SPACE  &kp RET
             >;
 
