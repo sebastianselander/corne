@@ -305,10 +305,10 @@ behaviors {
 
 // layer_none {
 //      bindings = <
-//         &none                         &none                         &none                         &none                         &none                         &none                &none        &none                         &none                         &none                         &none                         &none                         &none 
-//         &none                         &none                         &none                         &none                         &none                         &none          &none &none &none  &none                         &none                         &none                         &none                         &none                         &none 
-//         &none                         &none                         &none                         &none                         &none                         &none  &none         &none        &none                         &none                         &none                         &none                         &none                         &none 
-//                                                                                                   &none                         &none                         &none                             &none                         &none                         &none                                                          
+//         &none                         &none                         &none                         &none                         &none                         &none                &none        &none                         &none                         &none                         &none                         &none                         &none
+//         &none                         &none                         &none                         &none                         &none                         &none          &none &none &none  &none                         &none                         &none                         &none                         &none                         &none
+//         &none                         &none                         &none                         &none                         &none                         &none  &none         &none        &none                         &none                         &none                         &none                         &none                         &none
+//                                                                                                   &none                         &none                         &none                             &none                         &none                         &none
 //      >;
 //      sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
 // };
@@ -318,45 +318,49 @@ behaviors {
         compatible = "zmk,keymap";
 
         layer_Base {
+            display-name = "QWERTY";
             bindings = <
-                    &kp GRAVE                &kp Q                     &kp W                    &kp E                          &kp R                    &kp T                          &none              &kp Y                    &kp U                       &kp I                           &kp O                               &kp P                           &kp LBKT
-                    &kp ESC                  &hrm_left_pinky LGUI A    &hrm_left_ring LALT S    &hrm_left_middle LCTRL D       &hrm_left_index LSHIFT F &kp G                    &none &none &none        &kp H                    &hrm_right_index RSHIFT J   &hrm_right_middle RCTRL K       &hrm_right_ring LALT                &hrm_right_pinky RGUI SEMI      &kp SQT 
-                    &skp LSHIFT              &kp Z                     &kp X                    &kp C                          &kp V                    &kp B            &none         &none              &kp N                    &kp M                       &kp COMMA                       &kp DOT                             &kp FSLH                        &skp RSHIFT
-                                                                                                &none                          &none                    &caps_word                                        &kp TAB                  &none                       &kp RET
+                &none                         &none                         &none                         &none                         &none                         &none                &none        &none                         &none                         &none                         &none                         &none                         &none
+                &none                         &none                         &none                         &none                         &none                         &none          &none &none &none  &none                         &none                         &none                         &none                         &none                         &none
+                &none                         &none                         &none                         &none                         &none                         &none  &none         &none        &none                         &none                         &none                         &none                         &none                         &none
+                                                                                                          &none                         &none                         &none                             &none                         &none                         &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
-        // layer_Symbol {
-        //      bindings = <
-        //         &none                         &none                         &none                         &none                         &none                         &none                &none        &none                         &none                         &none                         &none                         &none                         &none 
-        //         &none                         &none                         &none                         &none                         &kp LS(N4)                    &none          &none &none &none  &none                         &none                         &none                         &none                         &none                         &none 
-        //         &none                         &none                         &none                         &none                         &none                         &none  &none         &none        &none                         &none                         &none                         &none                         &none                         &none 
-        //                                                                                                   &none                         &none                         &none                             &none                         &none                         &none                                                          
-        //      >;
-        //      sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
-        // };
-        // 
-        // layer_Numpad {
-        //      bindings = <
-        //         &none                         &none                         &none                         &none                         &none                         &none                &none        &none                         &none                         &none                         &none                         &none                         &none 
-        //         &none                         &none                         &none                         &none                         &none                         &none          &none &none &none  &none                         &none                         &none                         &none                         &none                         &none 
-        //         &none                         &none                         &none                         &none                         &none                         &none  &none         &none        &none                         &none                         &none                         &none                         &none                         &none 
-        //                                                                                                   &none                         &none                         &none                             &kp DOT                       &kp N0                        &none                                                          
-        //      >;
-        //      sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
-        // };
-        // 
-        // layer_Navigation {
-        //      bindings = <
-        //         &none                         &none                         &none                         &none                         &none                         &none                &none        &none                         &none                         &none                         &none                         &none                         &none 
-        //         &none                         &none                         &none                         &none                         &none                         &none          &none &none &none  &kp LEFT                      &kp DOWN                      &kp UP                        &kp RIGHT                     &none                         &none 
-        //         &none                         &none                         &none                         &none                         &none                         &none  &none         &none        &none                         &none                         &none                         &none                         &none                         &none 
-        //                                                                                                   &none                         &none                         &none                             &none                         &none                         &none                                                          
-        //      >;
-        //      sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
-        // };
+        layer_Symbol {
+             display-name = "SYMBOL";
+             bindings = <
+                &none                         &none                         &none                         &none                         &none                         &none                &none        &none                         &none                         &none                         &none                         &none                         &none
+                &none                         &none                         &none                         &none                         &none                         &none          &none &none &none  &none                         &none                         &none                         &none                         &none                         &none
+                &none                         &none                         &none                         &none                         &none                         &none  &none         &none        &none                         &none                         &none                         &none                         &none                         &none
+                                                                                                          &none                         &none                         &none                             &none                         &none                         &none
+             >;
+             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+        };
+
+        layer_Numpad {
+             display-name = "NUMPAD";
+             bindings = <
+                &none                         &none                         &none                         &none                         &none                         &none                &none        &none                         &none                         &none                         &none                         &none                         &none
+                &none                         &none                         &none                         &none                         &none                         &none          &none &none &none  &none                         &none                         &none                         &none                         &none                         &none
+                &none                         &none                         &none                         &none                         &none                         &none  &none         &none        &none                         &none                         &none                         &none                         &none                         &none
+                                                                                                          &none                         &none                         &none                             &none                         &none                         &none
+             >;
+             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+        };
+
+        layer_Navigation {
+             display-name = "NAV";
+             bindings = <
+                &none                         &none                         &none                         &none                         &none                         &none                &none        &none                         &none                         &none                         &none                         &none                         &none
+                &none                         &none                         &none                         &none                         &none                         &none          &none &none &none  &none                         &none                         &none                         &none                         &none                         &none
+                &none                         &none                         &none                         &none                         &none                         &none  &none         &none        &none                         &none                         &none                         &none                         &none                         &none
+                                                                                                          &none                         &none                         &none                             &none                         &none                         &none
+             >;
+             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+        };
 
     };
 };
