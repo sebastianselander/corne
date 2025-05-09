@@ -293,15 +293,15 @@ behaviors {
         tap-ms = <100>;
     };
 
-#define HRM_A(key) hrm_left_pinky(key)
-#define HRM_S(key) hrm_left_ring(key)
-#define HRM_D(key) hrm_left_middle(key)
-#define HRM_F(key) hrm_left_index(key)
+#define HRM_A(key) hrm_left_pinky key A
+#define HRM_S(key) hrm_left_ring key S
+#define HRM_D(key) hrm_left_middle key D
+#define HRM_F(key) hrm_left_index key F
 
-#define HRM_J(key) hrm_right_pinky(key)
-#define HRM_K(key) hrm_right_ring(key)
-#define HRM_L(key) hrm_right_middle(key)
-#define HRM_SEMI(key) hrm_right_index(key)
+#define HRM_J(key) hrm_right_pinky key J
+#define HRM_K(key) hrm_right_ring key K
+#define HRM_L(key) hrm_right_middle key L
+#define HRM_SEMI(key) hrm_right_index key SEMI
 
 // layer_none {
 //      bindings = <
@@ -320,10 +320,10 @@ behaviors {
         layer_Base {
             display-name = "QWERTY";
             bindings = <
-                &none                         &none                         &none                         &none                         &none                         &none                &none        &none                         &none                         &none                         &none                         &none                         &none
-                &none                         &none                         &none                         &none                         &none                         &none          &none &none &none  &none                         &none                         &none                         &none                         &none                         &none
-                &none                         &none                         &none                         &none                         &none                         &none  &none         &none        &none                         &none                         &none                         &none                         &none                         &none
-                                                                                                          &none                         &none                         &none                             &none                         &none                         &none
+                &kp GRAVE                     &kp Q                         &kp W                         &kp E                         &kp R                         &kp T                &none        &kp Y                         &kp U                         &kp I                         &kp O                         &kp P                         &kp LBKT
+                &kp ESC                       &kp A                         &kp S                         &kp D                         &kp F                         &kp G          &none &none &none  &kp H                         &kp J                         &kp K                         &kp L                         &kp SEMI                      &kp SQT
+                &kp LSHIFT                    &kp Z                         &kp X                         &kp C                         &kp V                         &kp B  &none         &none        &kp N                         &kp M                         &kp COMMA                     &kp DOT                       &kp SLASH                     &kp RSHIFT
+                                                                                                          &kp LSHIFT                    &kp BACKSPACE                 &caps_word                        &kp TAB                       &kp SPACE                     &kp ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
