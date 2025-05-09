@@ -111,12 +111,54 @@
 / {
       combos {
         compatible = "zmk,combos";
+        combo_lparen_combo {
+            timeout-ms = <45>;
+            key-positions = <15 16>;
+            bindings = <&kp LPAR>;
+            layers = <base symbol>;
+            require-prior-idle-ms = <100>;
+        };
+        combo_rparen_combo {
+            timeout-ms = <45>;
+            key-positions = <19 20>;
+            bindings = <&kp RPAR>;
+            layers = <base symbol>;
+            require-prior-idle-ms = <100>;
+        };
+        combo_lbracket_combo {
+            timeout-ms = <45>;
+            key-positions = <27 28>;
+            bindings = <&kp LBKT>;
+            layers = <base symbol>;
+            require-prior-idle-ms = <100>;
+        };
+        combo_rbracket_combo {
+            timeout-ms = <45>;
+            key-positions = <31 32>;
+            bindings = <&kp RBKT>;
+            layers = <base symbol>;
+            require-prior-idle-ms = <100>;
+        };
+        combo_lbrace_combo {
+            timeout-ms = <45>;
+            key-positions = <3 4>;
+            bindings = <&kp LBRC>;
+            layers = <base symbol>;
+            require-prior-idle-ms = <100>;
+        };
+        combo_rbrace_combo {
+            timeout-ms = <45>;
+            key-positions = <7 8>;
+            bindings = <&kp RBRC>;
+            layers = <base symbol>;
+            require-prior-idle-ms = <100>;
+        };
         combo_ao_combo {
             timeout-ms = <45>;
             key-positions = <25 9>;
             bindings = <&ao_macro>;
             layers = <0>;
-            require-prior-idle-ms = <50>;
+            require-prior-idle-ms = <100>;
         };
 
         combo_ae_combo {
@@ -124,7 +166,7 @@
             key-positions = <25 15>;
             bindings = <&ae_macro>;
             layers = <0>;
-            require-prior-idle-ms = <50>;
+            require-prior-idle-ms = <100>;
         };
 
         combo_oe_combo {
@@ -132,7 +174,7 @@
             key-positions = <15 9>;
             bindings = <&oe_macro>;
             layers = <0>;
-            require-prior-idle-ms = <50>;
+            require-prior-idle-ms = <100>;
         };
       };
 
