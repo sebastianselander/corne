@@ -270,7 +270,7 @@ behaviors {
     hrm_left_pinky: hrm_left_pinky {
         compatible = "zmk,behavior-hold-tap";
         flavor = "tap-preferred";
-        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <PINKY_TAPPINGTERM>;
         quick-tap-ms = <250>;
@@ -281,7 +281,7 @@ behaviors {
     hrm_left_ring: hrm_left_ring {
         compatible = "zmk,behavior-hold-tap";
         flavor = "tap-preferred";
-        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <RING_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_RING>;
@@ -292,7 +292,7 @@ behaviors {
     hrm_left_middle: hrm_left_middle {
         compatible = "zmk,behavior-hold-tap";
         flavor = "tap-preferred";
-        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <MIDDLE_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_MIDDLE>;
@@ -303,7 +303,7 @@ behaviors {
     hrm_left_index: hrm_left_index {
         compatible = "zmk,behavior-hold-tap";
         flavor = "tap-preferred";
-        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <INDEX_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_INDEX>;
@@ -315,7 +315,7 @@ behaviors {
     hrm_right_pinky: hrm_right_pinky {
         compatible = "zmk,behavior-hold-tap";
         flavor = "tap-preferred";
-        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <PINKY_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_PINKY>;
@@ -326,7 +326,7 @@ behaviors {
     hrm_right_ring: hrm_right_ring {
         compatible = "zmk,behavior-hold-tap";
         flavor = "tap-preferred";
-        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <RING_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_RING>;
@@ -337,7 +337,7 @@ behaviors {
     hrm_right_middle: hrm_right_middle {
         compatible = "zmk,behavior-hold-tap";
         flavor = "tap-preferred";
-        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <MIDDLE_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_MIDDLE>;
@@ -348,7 +348,7 @@ behaviors {
     hrm_right_index: hrm_right_index {
         compatible = "zmk,behavior-hold-tap";
         flavor = "tap-preferred";
-        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <INDEX_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_INDEX>;
