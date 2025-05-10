@@ -254,7 +254,7 @@ behaviors {
         #binding-cells = <2>;
         flavor = "tap-preferred";
         tapping-term-ms = <200>;
-        quick-tap-ms = <QUICKTAPMS>;
+        quick-tap-ms = <QUICKTAP>;
         require-prior-idle-ms = <100>;
         bindings = <&kp>, <&kp>;
     };
@@ -263,7 +263,7 @@ behaviors {
         #binding-cells = <2>;
         flavor = "tap-preferred";
         tapping-term-ms = <200>;
-        quick-tap-ms = <QUICKTAPMS>;
+        quick-tap-ms = <QUICKTAP>;
         require-prior-idle-ms = <100>;
         bindings = <&mo>, <&kp>;
     };
@@ -362,7 +362,7 @@ behaviors {
         tapping-term-ms = <150>;
         bindings = <&mo>, <&skp>;
         flavor = "tap-preferred";
-        quick-tap-ms = <QUICKTAPMS>;
+        quick-tap-ms = <QUICKTAP>;
     };
     lht: layer_hold_tap {
         compatible = "zmk,behavior-hold-tap";
@@ -370,7 +370,7 @@ behaviors {
         tapping-term-ms = <150>;
         bindings = <&mo>, <&kp>;
         flavor = "tap-preferred";
-        quick-tap-ms = <QUICKTAPMS>;
+        quick-tap-ms = <QUICKTAP>;
     };
 };
 
