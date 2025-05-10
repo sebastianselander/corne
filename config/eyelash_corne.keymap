@@ -20,7 +20,7 @@
     // |          42 43 44      |          45 45 47          |
     // |------------------------|----------------------------|
 
-    yuooppooououoqwertyuop[[[['';;;asd;fjjk;lasdfasdfjkl;zxxczvzxcvbbnm,/
+
 #define LEFT_HAND_KEYS    \
         0  1  2  3  4  5  \
         12 13 14 15 16 17 \
