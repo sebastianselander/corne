@@ -11,15 +11,16 @@
 #include <dt-bindings/zmk/rgb.h>
 
 // Eyelash corne key positions. Source missing
-    // |------------------------|------------------------|
-    // | LEFT_HAND_KEYS         |        RIGHT_HAND_KEYS |
-    // |                        |                        |
-    // | 0  1  2  3  4  5       |      6  7  8  9  10 11 |
-    // | 12 13 14 15 16 17      |      18 19 20 21 22 23 |
-    // | 24 25 26 27 28 29      |      30 31 32 33 34 35 |
-    // |          36 37 38      |      39 40 41          |
-    // |------------------------|------------------------|
+    // |------------------------|----------------------------|
+    // | LEFT_HAND_KEYS         |            RIGHT_HAND_KEYS |
+    // |                        |                            |
+    // | 0  1  2  3  4  5       |    6     7  8  9  10  11 12 |
+    // | 13 14 15 16 17 18      | 19 20 21 22 23 24 25 26 27 |
+    // | 28 29 30 31 32 33 34   |    35    36 37 38 39 40 41 |
+    // |          42 43 44      |          45 45 47          |
+    // |------------------------|----------------------------|
 
+    yuooppooououoqwertyuop[[[['';;;asd;fjjk;lasdfasdfjkl;zxxczvzxcvbbnm,/
 #define LEFT_HAND_KEYS    \
         0  1  2  3  4  5  \
         12 13 14 15 16 17 \
@@ -154,28 +155,28 @@
         compatible = "zmk,combos";
         combo_lparen_combo {
             timeout-ms = <45>;
-            key-positions = <15 16>;
+            key-positions = <16 17>;
             bindings = <&kp LPAR>;
             layers = <0 1>;
             require-prior-idle-ms = <100>;
         };
         combo_rparen_combo {
             timeout-ms = <45>;
-            key-positions = <19 20>;
+            key-positions = <22 23>;
             bindings = <&kp RPAR>;
             layers = <0 1>;
             require-prior-idle-ms = <100>;
         };
         combo_lbracket_combo {
             timeout-ms = <45>;
-            key-positions = <27 28>;
+            key-positions = <32 33>;
             bindings = <&kp LBKT>;
             layers = <0 1>;
             require-prior-idle-ms = <100>;
         };
         combo_rbracket_combo {
             timeout-ms = <45>;
-            key-positions = <31 32>;
+            key-positions = <36 37>;
             bindings = <&kp RBKT>;
             layers = <0 1>;
             require-prior-idle-ms = <100>;
@@ -196,7 +197,7 @@
         };
         combo_ao_combo {
             timeout-ms = <45>;
-            key-positions = <25 9>;
+            key-positions = <14 10>;
             bindings = <&ao_macro>;
             layers = <0>;
             require-prior-idle-ms = <100>;
@@ -204,7 +205,7 @@
 
         combo_ae_combo {
             timeout-ms = <45>;
-            key-positions = <25 15>;
+            key-positions = <14 3>;
             bindings = <&ae_macro>;
             layers = <0>;
             require-prior-idle-ms = <100>;
@@ -212,7 +213,7 @@
 
         combo_oe_combo {
             timeout-ms = <45>;
-            key-positions = <15 9>;
+            key-positions = <3 10>;
             bindings = <&oe_macro>;
             layers = <0>;
             require-prior-idle-ms = <100>;
@@ -392,9 +393,9 @@ behaviors {
         layer_base {
             display-name = "QWERTY";
             bindings = <
-                &kp EXCL     &kp Q          &kp W          &kp E                    &kp R              &kp T                    &none               &kp Y        &kp U             &kp I              &kp O          &kp P                         &kp LBKT
-                &kp ESC      &HRM_A(LGUI)   &HRM_S(LALT)   &HRM_D(LCTRL)            &HRM_F(LSHFT)      &kp G              &none &none &none         &kp H        &HRM_J(LSHFT)     &HRM_K(RCTRL)      &HRM_L(LALT)   &HRM_SEMI(RGUI)               &kp SQT
-                &mo MAGIC    &kp Z          &kp X          &kp C                    &kp V              &kp B        &none       &none               &kp N        &kp M             &kp COMMA          &kp DOT        &kp SLASH                     &skp RSHFT
+                &kp EXCL     &kp Q          &kp W          &kp E                    &kp R              &kp T                    &none               &kp Y        &kp U             &kp I              &kp O          &kp P            &kp LBKT
+                &kp ESC      &HRM_A(LGUI)   &HRM_S(LALT)   &HRM_D(LCTRL)            &HRM_F(LSHFT)      &kp G              &none &none &none         &kp H        &HRM_J(LSHFT)     &HRM_K(RCTRL)      &HRM_L(LALT)   &HRM_SEMI(RGUI)  &kp SQT
+                &mo MAGIC    &kp Z          &kp X          &kp C                    &kp V              &kp B        &none       &none               &kp N        &kp M             &kp COMMA          &kp DOT        &kp SLASH        &skp RSHFT
                                                            &lhst NAVIGATION LSHFT   &lht NUMPAD BSPC   &caps_word                                   &kp TAB      &lht SYMBOL SPACE &kp ENTER
             >;
         };
