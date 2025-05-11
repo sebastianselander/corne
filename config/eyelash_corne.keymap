@@ -35,20 +35,21 @@
 
 #define THUMB_KEYS 36 37 38 39 40 41
 
-#define QUICKTAP 300
+#define QUICKTAP 150
 #define QUICKTAP_PINKY 200
 #define QUICKTAP_RING 150
 #define QUICKTAP_MIDDLE 150
 #define QUICKTAP_INDEX 150
-#define INDEX_TAPPINGTERM 150
-#define MIDDLE_TAPPINGTERM 150
-#define RING_TAPPINGTERM 150
-#define PINKY_TAPPINGTERM 200
+#define INDEX_TAPPINGTERM 180
+#define MIDDLE_TAPPINGTERM 200
+#define RING_TAPPINGTERM 220
+#define PINKY_TAPPINGTERM 250
 
 #define BASE 0
 #define SYMBOL 1
 #define NUMPAD 2
 #define NAVIGATION 3
+#define FN 4
 #define MAGIC 4
 #define NONE 5
 
@@ -428,7 +429,7 @@ behaviors {
              display-name = "NUMPAD";
              bindings = <
                  &none      &kp ENTER    &kp BSPC   &kp TAB      &kp SPACE  &none                   &none           &kp PERCENT   &kp N7    &kp N8    &kp N9    &kp COLON &none
-                 &none      &kp LGUI     &kp LALT   &kp LCTRL    &kp LSHFT  &none             &none &none &none     &kp PLUS      &kp N4    &kp N5    &kp N6    &kp MINUS &none
+                 &mo FN     &kp LGUI     &kp LALT   &kp LCTRL    &kp LSHFT  &none             &none &none &none     &kp PLUS      &kp N4    &kp N5    &kp N6    &kp MINUS &none
                  &none      &none        &none      &none        &none      &none       &none       &none           &kp STAR      &kp N1    &kp N2    &kp N3    &kp SLASH &none
                                                     &none        &none      &none                                   &kp COMMA     &kp N0    &kp DOT
              >;
@@ -441,6 +442,16 @@ behaviors {
                  &trans      &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &kp PSCRN           &none &none &none      &kp LEFT      &kp DOWN     &kp UP      &kp RIGHT &trans       &trans
                  &trans      &trans      &trans      &trans      &trans      &trans        &none       &none            &kp HOME      &kp PG_DN    &kp PG_UP   &kp END   &trans       &trans
                                                      &trans      &trans      &trans                                     &trans        &trans       &trans
+             >;
+        };
+
+        layer_function {
+            display-name = "function";
+             bindings = <
+                 &none      &kp ENTER    &kp BSPC   &kp TAB      &kp SPACE  &none                   &none           &none         &kp F7    &kp F8    &kp F9    &none &none
+                 &none      &kp LGUI     &kp LALT   &kp LCTRL    &kp LSHFT  &none             &none &none &none     &none         &kp F4    &kp F5    &kp F6    &none &none
+                 &none      &none        &none      &none        &none      &none       &none       &none           &none         &kp F1    &kp F2    &kp F3    &none &none
+                                                    &none        &none      &none                                   &kp F10       &kp F11   &kp F12
              >;
         };
 
