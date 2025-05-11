@@ -13,8 +13,8 @@
         devShells = {
           default = pkgs.mkShell {
             nativeBuildInputs = with pkgs; [
-                docker
-                devcontainer
+              python312Packages.west
+              python312Packages.remarshal
             ];
           }; };
       });
