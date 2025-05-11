@@ -242,7 +242,7 @@
             bindings = <&mo MAGIC>;
             layers = <0>;
             require-prior-idle-ms = <100>;
-        }
+        };
       };
 
 
