@@ -218,6 +218,13 @@
             layers = <0>;
             require-prior-idle-ms = <100>;
         };
+        combo_magic {
+            timeout-ms = <100>;
+            key-positions = <0 1 2>;
+            bindings = <&mo magic>;
+            layers = <0>;
+            require-prior-idle-ms = <100>;
+        }
       };
 
 
