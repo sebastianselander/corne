@@ -35,6 +35,16 @@
 
 #define THUMB_KEYS 36 37 38 39 40 41
 
+#define QUICKTAP 300
+#define QUICKTAP_PINKY 250
+#define QUICKTAP_RING 200
+#define QUICKTAP_MIDDLE 150
+#define QUICKTAP_INDEX 150
+#define INDEX_TAPPINGTERM 180
+#define MIDDLE_TAPPINGTERM 200
+#define RING_TAPPINGTERM 220
+#define PINKY_TAPPINGTERM 240
+
 / {
     macros {
 
@@ -157,35 +167,35 @@
             timeout-ms = <45>;
             key-positions = <16 17>;
             bindings = <&kp LPAR>;
-            layers = <0 1>;
+            layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <100>;
         };
         combo_rparen {
             timeout-ms = <45>;
             key-positions = <23 24>;
             bindings = <&kp RPAR>;
-            layers = <0 1>;
+            layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <100>;
         };
         combo_lbracket {
             timeout-ms = <45>;
             key-positions = <31 32>;
             bindings = <&kp LBKT>;
-            layers = <0 1>;
+            layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <100>;
         };
         combo_rbracket {
             timeout-ms = <45>;
             key-positions = <37 38>;
             bindings = <&kp RBKT>;
-            layers = <0 1>;
+            layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <100>;
         };
         combo_lbrace {
             timeout-ms = <45>;
             key-positions = <3 4>;
             bindings = <&kp LBRC>;
-            layers = <0 1>;
+            layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <100>;
         };
         combo_rbrace {
@@ -218,6 +228,7 @@
             layers = <0>;
             require-prior-idle-ms = <100>;
         };
+
         combo_magic {
             timeout-ms = <100>;
             key-positions = <0 1 2>;
@@ -228,15 +239,6 @@
       };
 
 
-#define QUICKTAP 300
-#define QUICKTAP_PINKY 250
-#define QUICKTAP_RING 200
-#define QUICKTAP_MIDDLE 150
-#define QUICKTAP_INDEX 150
-#define INDEX_TAPPINGTERM 180
-#define MIDDLE_TAPPINGTERM 200
-#define RING_TAPPINGTERM 220
-#define PINKY_TAPPINGTERM 240
 
 behaviors {
     lt {
@@ -390,13 +392,6 @@ behaviors {
 #define HRM_K(key) hrm_right_ring key K
 #define HRM_L(key) hrm_right_middle key L
 #define HRM_SEMI(key) hrm_right_index key SEMI
-
-#define BASE 0
-#define SYMBOL 1
-#define NUMPAD 2
-#define NAVIGATION 3
-#define MAGIC 4
-#define NONE 5
 
     keymap {
         compatible = "zmk,keymap";
