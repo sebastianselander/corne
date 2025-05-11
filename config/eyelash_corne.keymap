@@ -237,9 +237,16 @@
             require-prior-idle-ms = <100>;
         };
 
-        combo_magic {
+        combo_magic_left {
             timeout-ms = <100>;
             key-positions = <0 1 2>;
+            bindings = <&mo MAGIC>;
+            layers = <0>;
+            require-prior-idle-ms = <100>;
+        };
+        combo_magic_right {
+            timeout-ms = <100>;
+            key-positions = <10 11 12>;
             bindings = <&mo MAGIC>;
             layers = <0>;
             require-prior-idle-ms = <100>;
@@ -458,10 +465,10 @@ behaviors {
         layer_magic {
              display-name = "magic";
              bindings = <
-                &none &none &none &none &none &none               &none          &none &none &none &none &none &none
-                &bootloader &none &none &none &none         &none &none &none    &none &none &none &none &none &none &none
-                &none &none &none &none &none &none   &none       &none          &none &none &none &none &none &none
-                                  &bt_0 &bt_1 &bt_2                              &bt_3 &bt_4 &out OUT_USB
+                &none       &none &none &none &none &none               &none          &none &none &none &none &none &none
+                &bootloader &none &none &none &none &none         &none &none &none    &none &none &none &none &none &bootloader
+                &none       &none &none &none &none &none   &none       &none          &none &none &none &none &none &none
+                                  &bt_0 &bt_1 &bt_2                                    &bt_3 &bt_4 &out OUT_USB
              >;
         };
 
