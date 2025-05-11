@@ -153,49 +153,49 @@
 / {
       combos {
         compatible = "zmk,combos";
-        combo_lparen_combo {
+        combo_lparen {
             timeout-ms = <45>;
             key-positions = <16 17>;
             bindings = <&kp LPAR>;
             layers = <0 1>;
             require-prior-idle-ms = <100>;
         };
-        combo_rparen_combo {
+        combo_rparen {
             timeout-ms = <45>;
             key-positions = <23 24>;
             bindings = <&kp RPAR>;
             layers = <0 1>;
             require-prior-idle-ms = <100>;
         };
-        combo_lbracket_combo {
+        combo_lbracket {
             timeout-ms = <45>;
             key-positions = <31 32>;
             bindings = <&kp LBKT>;
             layers = <0 1>;
             require-prior-idle-ms = <100>;
         };
-        combo_rbracket_combo {
+        combo_rbracket {
             timeout-ms = <45>;
             key-positions = <37 38>;
             bindings = <&kp RBKT>;
             layers = <0 1>;
             require-prior-idle-ms = <100>;
         };
-        combo_lbrace_combo {
+        combo_lbrace {
             timeout-ms = <45>;
             key-positions = <3 4>;
             bindings = <&kp LBRC>;
             layers = <0 1>;
             require-prior-idle-ms = <100>;
         };
-        combo_rbrace_combo {
+        combo_rbrace {
             timeout-ms = <45>;
             key-positions = <8 9>;
             bindings = <&kp RBRC>;
             layers = <0 1>;
             require-prior-idle-ms = <100>;
         };
-        combo_ao_combo {
+        combo_ao {
             timeout-ms = <45>;
             key-positions = <14 10>;
             bindings = <&ao_macro>;
@@ -203,7 +203,7 @@
             require-prior-idle-ms = <100>;
         };
 
-        combo_ae_combo {
+        combo_ae {
             timeout-ms = <45>;
             key-positions = <14 3>;
             bindings = <&ae_macro>;
@@ -211,7 +211,7 @@
             require-prior-idle-ms = <100>;
         };
 
-        combo_oe_combo {
+        combo_oe {
             timeout-ms = <45>;
             key-positions = <3 10>;
             bindings = <&oe_macro>;
