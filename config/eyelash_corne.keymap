@@ -45,6 +45,13 @@
 #define RING_TAPPINGTERM 150
 #define PINKY_TAPPINGTERM 200
 
+#define BASE 0
+#define SYMBOL 1
+#define NUMPAD 2
+#define NAVIGATION 3
+#define MAGIC 4
+#define NONE 5
+
 / {
     macros {
 
