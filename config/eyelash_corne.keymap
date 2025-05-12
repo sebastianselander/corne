@@ -187,8 +187,8 @@
             require-prior-idle-ms = <100>;
         };
         combo_lbracket {
-            timeout-ms = <31 32>;
-            key-positions = <COMBO_TIMEOUT>;
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <31 32>;
             bindings = <&kp LBKT>;
             layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <100>;
