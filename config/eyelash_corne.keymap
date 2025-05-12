@@ -168,7 +168,8 @@
     trigger-period-ms = <16>;
 };
 
-#define COMBO_TIMEOUT 55
+#define COMBO_TIMEOUT 45
+
 / {
       combos {
         compatible = "zmk,combos";
@@ -299,7 +300,7 @@ behaviors {
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <PINKY_TAPPINGTERM>;
         quick-tap-ms = <250>;
-        require-prior-idle-ms = <65>;
+        require-prior-idle-ms = <35>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
     };
@@ -310,7 +311,7 @@ behaviors {
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <RING_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_RING>;
-        require-prior-idle-ms = <65>;
+        require-prior-idle-ms = <35>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
     };
@@ -321,7 +322,7 @@ behaviors {
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <MIDDLE_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_MIDDLE>;
-        require-prior-idle-ms = <65>;
+        require-prior-idle-ms = <35>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
     };
@@ -332,7 +333,7 @@ behaviors {
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <INDEX_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_INDEX>;
-        require-prior-idle-ms = <65>;
+        require-prior-idle-ms = <35>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
     };
@@ -344,7 +345,7 @@ behaviors {
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <PINKY_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_PINKY>;
-        require-prior-idle-ms = <65>;
+        require-prior-idle-ms = <35>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
     };
@@ -355,7 +356,7 @@ behaviors {
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <RING_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_RING>;
-        require-prior-idle-ms = <65>;
+        require-prior-idle-ms = <35>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
     };
@@ -366,7 +367,7 @@ behaviors {
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <MIDDLE_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_MIDDLE>;
-        require-prior-idle-ms = <65>;
+        require-prior-idle-ms = <35>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
     };
@@ -377,7 +378,7 @@ behaviors {
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <INDEX_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_INDEX>;
-        require-prior-idle-ms = <65>;
+        require-prior-idle-ms = <35>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
     };
