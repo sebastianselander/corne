@@ -187,15 +187,15 @@
             require-prior-idle-ms = <100>;
         };
         combo_lbracket {
-            timeout-ms = <45>;
+            timeout-ms = <31 32>;
             key-positions = <COMBO_TIMEOUT>;
             bindings = <&kp LBKT>;
             layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <100>;
         };
         combo_rbracket {
-            timeout-ms = <45>;
-            key-positions = <COMBO_TIMEOUT>;
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <37 38>;
             bindings = <&kp RBKT>;
             layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <100>;
