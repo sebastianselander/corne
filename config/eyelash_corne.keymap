@@ -168,18 +168,19 @@
     trigger-period-ms = <16>;
 };
 
+#define COMBO_TIMEOUT 55
 / {
       combos {
         compatible = "zmk,combos";
         combo_lparen {
-            timeout-ms = <45>;
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <16 17>;
             bindings = <&kp LPAR>;
             layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <100>;
         };
         combo_rparen {
-            timeout-ms = <45>;
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <23 24>;
             bindings = <&kp RPAR>;
             layers = <BASE SYMBOL NUMPAD>;
@@ -187,34 +188,34 @@
         };
         combo_lbracket {
             timeout-ms = <45>;
-            key-positions = <31 32>;
+            key-positions = <COMBO_TIMEOUT>;
             bindings = <&kp LBKT>;
             layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <100>;
         };
         combo_rbracket {
             timeout-ms = <45>;
-            key-positions = <37 38>;
+            key-positions = <COMBO_TIMEOUT>;
             bindings = <&kp RBKT>;
             layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <100>;
         };
         combo_lbrace {
-            timeout-ms = <45>;
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <3 4>;
             bindings = <&kp LBRC>;
             layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <100>;
         };
         combo_rbrace {
-            timeout-ms = <45>;
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <8 9>;
             bindings = <&kp RBRC>;
             layers = <0 1>;
             require-prior-idle-ms = <100>;
         };
         combo_ao {
-            timeout-ms = <45>;
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <14 10>;
             bindings = <&ao_macro>;
             layers = <0>;
@@ -222,7 +223,7 @@
         };
 
         combo_ae {
-            timeout-ms = <45>;
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <14 3>;
             bindings = <&ae_macro>;
             layers = <0>;
@@ -230,7 +231,7 @@
         };
 
         combo_oe {
-            timeout-ms = <45>;
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <3 10>;
             bindings = <&oe_macro>;
             layers = <0>;
