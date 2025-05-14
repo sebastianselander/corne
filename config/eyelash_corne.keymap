@@ -52,6 +52,35 @@
 #define FN 4
 #define MAGIC 4
 #define NONE 5
+#define COMBO_TIMEOUT 45
+
+#define HRM_A(key) hrm_left_pinky key A
+#define HRM_S(key) hrm_left_ring key S
+#define HRM_D(key) hrm_left_middle key D
+#define HRM_F(key) hrm_left_index key F
+
+#define HRM_J(key) hrm_right_pinky key J
+#define HRM_K(key) hrm_right_ring key K
+#define HRM_L(key) hrm_right_middle key L
+#define HRM_SEMI(key) hrm_right_index key SEMI
+
+
+&mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
+
+&msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
+
+&msc {
+    acceleration-exponent = <1>;      // 0
+    time-to-max-speed-ms = <100>;       // 300
+    delay-ms = <0>;                   // 0
+};
+
+&mmv {
+    time-to-max-speed-ms = <500>;
+    acceleration-exponent = <1>;
+    trigger-period-ms = <16>;
+};
+
 
 / {
     macros {
@@ -150,27 +179,7 @@
                 , <&kp LSHFT>;
         };
     };
-};
 
-&mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
-
-&msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
-
-&msc {
-    acceleration-exponent = <1>;      // 0
-    time-to-max-speed-ms = <100>;       // 300
-    delay-ms = <0>;                   // 0
-};
-
-&mmv {
-    time-to-max-speed-ms = <500>;
-    acceleration-exponent = <1>;
-    trigger-period-ms = <16>;
-};
-
-#define COMBO_TIMEOUT 45
-
-/ {
       combos {
         compatible = "zmk,combos";
         combo_lparen {
@@ -391,16 +400,6 @@ behaviors {
         quick-tap-ms = <QUICKTAP>;
     };
 };
-
-#define HRM_A(key) hrm_left_pinky key A
-#define HRM_S(key) hrm_left_ring key S
-#define HRM_D(key) hrm_left_middle key D
-#define HRM_F(key) hrm_left_index key F
-
-#define HRM_J(key) hrm_right_pinky key J
-#define HRM_K(key) hrm_right_ring key K
-#define HRM_L(key) hrm_right_middle key L
-#define HRM_SEMI(key) hrm_right_index key SEMI
 
     keymap {
         compatible = "zmk,keymap";
