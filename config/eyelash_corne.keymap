@@ -182,44 +182,86 @@
 
       combos {
         compatible = "zmk,combos";
-        combo_lparen {
+        combo_lparen_one {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <16 17>;
             bindings = <&kp LPAR>;
             layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <100>;
         };
-        combo_rparen {
+        combo_rparen_one {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <23 24>;
             bindings = <&kp RPAR>;
             layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <100>;
         };
-        combo_lbracket {
+        combo_lbracket_one {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <31 32>;
             bindings = <&kp LBKT>;
             layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <100>;
         };
-        combo_rbracket {
+        combo_rbracket_one {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <37 38>;
             bindings = <&kp RBKT>;
             layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <100>;
         };
-        combo_lbrace {
+        combo_lbrace_one {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <3 4>;
             bindings = <&kp LBRC>;
             layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <100>;
         };
-        combo_rbrace {
+        combo_rbrace_one {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <8 9>;
+            bindings = <&kp RBRC>;
+            layers = <0 1>;
+            require-prior-idle-ms = <100>;
+        };
+        combo_lparen_two {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <15 16>;
+            bindings = <&kp LPAR>;
+            layers = <BASE SYMBOL NUMPAD>;
+            require-prior-idle-ms = <100>;
+        };
+        combo_rparen_two {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <24 25>;
+            bindings = <&kp RPAR>;
+            layers = <BASE SYMBOL NUMPAD>;
+            require-prior-idle-ms = <100>;
+        };
+        combo_lbracket_two {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <30 31>;
+            bindings = <&kp LBKT>;
+            layers = <BASE SYMBOL NUMPAD>;
+            require-prior-idle-ms = <100>;
+        };
+        combo_rbracket_two {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <38 39>;
+            bindings = <&kp RBKT>;
+            layers = <BASE SYMBOL NUMPAD>;
+            require-prior-idle-ms = <100>;
+        };
+        combo_lbrace_two {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <2 3>;
+            bindings = <&kp LBRC>;
+            layers = <BASE SYMBOL NUMPAD>;
+            require-prior-idle-ms = <100>;
+        };
+        combo_rbrace_two {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <9 10>;
             bindings = <&kp RBRC>;
             layers = <0 1>;
             require-prior-idle-ms = <100>;
