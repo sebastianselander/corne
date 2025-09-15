@@ -500,7 +500,7 @@ behaviors {
         layer_magic {
              display-name = "magic";
              bindings = <
-                &none       &none &none &none &none &none               &none          &none &none &none &none &none &none
+                &bt BT_CLR  &none &none &none &none &none               &none          &none &none &none &none &none &none
                 &bootloader &none &none &none &none &none         &none &none &none    &none &none &none &none &none &bootloader
                 &none       &none &none &none &none &none   &none       &none          &none &none &none &none &none &none
                                   &bt_0 &bt_1 &bt_2                                    &bt_3 &bt_4 &out OUT_USB
