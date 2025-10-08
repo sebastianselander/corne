@@ -45,13 +45,22 @@
 #define RING_TAPPINGTERM 220
 #define PINKY_TAPPINGTERM 240
 
-#define BASE 0
-#define SYMBOL 1
-#define NUMPAD 2
-#define NAVIGATION 3
-#define FN 4
-#define MAGIC 4
-#define NONE 5
+// Layers linux
+#define BASE_L 0
+#define SYMBOL_L 1
+#define NUMPAD_L 2
+#define NAVIGATION_L 3
+#define FN_L 4
+
+// Layers windows
+#define BASE_W 5
+#define SYMBOW_L 6
+#define NUMPAD_W 7
+#define NAVIGATION_W 8
+#define FN_W 9
+
+#define MAGIC 10
+
 #define COMBO_TIMEOUT 45
 
 #define HRM_A(key) hrm_left_pinky key A
@@ -221,7 +230,7 @@
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <8 9>;
             bindings = <&kp RBRC>;
-            layers = <0 1>;
+            layers = <BASE_L SYMBOL_L>;
             require-prior-idle-ms = <100>;
         };
         combo_lparen_two {
@@ -263,45 +272,45 @@
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <9 10>;
             bindings = <&kp RBRC>;
-            layers = <0 1>;
+            layers = <BASE_L SYMBOL_L>;
             require-prior-idle-ms = <100>;
         };
-        combo_ao {
+        combo_ao_linux {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <14 10>;
             bindings = <&ao_macro>;
-            layers = <0>;
+            layers = <BASE_L>;
             require-prior-idle-ms = <100>;
         };
 
-        combo_ae {
+        combo_ae_linux {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <14 3>;
             bindings = <&ae_macro>;
-            layers = <0>;
+            layers = <BASE_L>;
             require-prior-idle-ms = <100>;
         };
 
-        combo_oe {
+        combo_oe_linux {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <3 10>;
             bindings = <&oe_macro>;
-            layers = <0>;
+            layers = <BASE_L>;
             require-prior-idle-ms = <100>;
         };
 
         combo_magic_left {
             timeout-ms = <100>;
-            key-positions = <0 1 2>;
+            key-positions = <42 43 44>;
             bindings = <&mo MAGIC>;
-            layers = <0>;
+            layers = <BASE_L BASE_W>;
             require-prior-idle-ms = <100>;
         };
         combo_magic_right {
             timeout-ms = <100>;
-            key-positions = <10 11 12>;
+            key-positions = <45 46 47>;
             bindings = <&mo MAGIC>;
-            layers = <0>;
+            layers = <BASE_L BASE_W>;
             require-prior-idle-ms = <100>;
         };
       };
@@ -347,7 +356,7 @@ behaviors {
     hrm_left_pinky: hrm_left_pinky {
         compatible = "zmk,behavior-hold-tap";
         flavor = "tap-preferred";
-        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <PINKY_TAPPINGTERM>;
         quick-tap-ms = <250>;
@@ -357,7 +366,7 @@ behaviors {
     hrm_left_ring: hrm_left_ring {
         compatible = "zmk,behavior-hold-tap";
         flavor = "tap-preferred";
-        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <RING_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_RING>;
@@ -367,7 +376,7 @@ behaviors {
     hrm_left_middle: hrm_left_middle {
         compatible = "zmk,behavior-hold-tap";
         flavor = "tap-preferred";
-        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <MIDDLE_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_MIDDLE>;
@@ -377,7 +386,7 @@ behaviors {
     hrm_left_index: hrm_left_index {
         compatible = "zmk,behavior-hold-tap";
         flavor = "tap-preferred";
-        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <INDEX_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_INDEX>;
@@ -388,7 +397,7 @@ behaviors {
     hrm_right_pinky: hrm_right_pinky {
         compatible = "zmk,behavior-hold-tap";
         flavor = "tap-preferred";
-        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <PINKY_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_PINKY>;
@@ -398,7 +407,7 @@ behaviors {
     hrm_right_ring: hrm_right_ring {
         compatible = "zmk,behavior-hold-tap";
         flavor = "tap-preferred";
-        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <RING_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_RING>;
@@ -408,7 +417,7 @@ behaviors {
     hrm_right_middle: hrm_right_middle {
         compatible = "zmk,behavior-hold-tap";
         flavor = "tap-preferred";
-        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <MIDDLE_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_MIDDLE>;
@@ -418,7 +427,7 @@ behaviors {
     hrm_right_index: hrm_right_index {
         compatible = "zmk,behavior-hold-tap";
         flavor = "tap-preferred";
-        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <INDEX_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_INDEX>;
@@ -446,18 +455,18 @@ behaviors {
     keymap {
         compatible = "zmk,keymap";
 
-        layer_base {
+        linux_base {
             display-name = "QWERTY";
             bindings = <
-                &kp EXCL     &kp Q          &kp W          &kp E                &kp R                 &kp T                    &none               &kp Y        &kp U             &kp I              &kp O          &kp P            &kp LBKT
-                &kp ESC      &HRM_A(LGUI)   &HRM_S(LALT)   &HRM_D(LCTRL)        &HRM_F(LSHFT)         &kp G              &none &none &none         &kp H        &HRM_J(LSHFT)     &HRM_K(RCTRL)      &HRM_L(LALT)   &HRM_SEMI(RGUI)  &kp SQT
-                &skp LSHFT   &kp Z          &kp X          &kp C                &kp V                 &kp B        &none       &none               &kp N        &kp M             &kp COMMA          &kp DOT        &kp SLASH        &skp RSHFT
-                                                           &lht NAVIGATION ESC  &lht NUMPAD BSPC      &lsd                                         &kp TAB      &lht SYMBOL SPACE &kp ENTER
+                &kp EXCL     &kp Q          &kp W          &kp E                 &kp R                 &kp T                    &none               &kp Y        &kp U               &kp I              &kp O          &kp P            &kp LBKT
+                &kp ESC      &HRM_A(LGUI)   &HRM_S(LALT)   &HRM_D(LCTRL)         &HRM_F(LSHFT)         &kp G              &none &none &none         &kp H        &HRM_J(LSHFT)       &HRM_K(RCTRL)      &HRM_L(LALT)   &HRM_SEMI(RGUI)  &kp SQT
+                &skp LSHFT   &kp Z          &kp X          &kp C                 &kp V                 &kp B        &none       &none               &kp N        &kp M               &kp COMMA          &kp DOT        &kp SLASH        &skp RSHFT
+                                                           &lht NAVIGATION_L ESC &lht NUMPAD_L BSPC    &lsd                                         &kp TAB      &lht SYMBOL_L SPACE &kp ENTER
             >;
         };
 
         // missing: {}()[]
-        layer_symbol {
+        linux_symbol {
              display-name = "SYMBOL";
              bindings = <
                  &kp GRAVE  &kp AMPS   &kp SQT   &kp DQT         &kp PLUS    &kp QMARK                      &none                  &kp GRAVE  &kp RSHFT  &kp RCTRL  &kp LALT   &kp RGUI   &none
@@ -467,17 +476,17 @@ behaviors {
              >;
         };
 
-        layer_numpad {
+        linux_numpad {
              display-name = "NUMPAD";
              bindings = <
-                 &none      &kp ENTER    &kp BSPC   &kp TAB      &kp SPACE  &none                   &none           &kp PERCENT   &kp N7    &kp N8    &kp N9    &kp COLON &none
-                 &mo FN     &kp LGUI     &kp LALT   &kp LCTRL    &kp LSHFT  &none             &none &none &none     &kp PLUS      &kp N4    &kp N5    &kp N6    &kp MINUS &none
-                 &none      &none        &none      &none        &none      &none       &none       &none           &kp STAR      &kp N1    &kp N2    &kp N3    &kp SLASH &none
-                                                    &none        &none      &none                                   &kp COMMA     &kp N0    &kp DOT
+                 &none        &kp ENTER    &kp BSPC   &kp TAB      &kp SPACE  &none                   &none           &kp PERCENT   &kp N7    &kp N8    &kp N9    &kp COLON &none
+                 &mo FN_L     &kp LGUI     &kp LALT   &kp LCTRL    &kp LSHFT  &none             &none &none &none     &kp PLUS      &kp N4    &kp N5    &kp N6    &kp MINUS &none
+                 &none        &none        &none      &none        &none      &none       &none       &none           &kp STAR      &kp N1    &kp N2    &kp N3    &kp SLASH &none
+                                                      &none        &none      &none                                   &kp COMMA     &kp N0    &kp DOT
              >;
         };
 
-        layer_navigation {
+        linux_navigation {
              display-name = "NAV";
              bindings = <
                  &trans      &trans      &trans      &trans      &trans      &trans                    &none            &kp K_REDO    &kp K_PASTE  &kp K_COPY  &kp K_CUT &kp K_UNDO   &trans
@@ -487,7 +496,7 @@ behaviors {
              >;
         };
 
-        layer_function {
+        linux_function {
             display-name = "function";
              bindings = <
                  &none      &kp ENTER    &kp BSPC   &kp TAB      &kp SPACE  &none                   &none           &none         &kp F7    &kp F8    &kp F9    &none &none
@@ -497,13 +506,64 @@ behaviors {
              >;
         };
 
-        layer_magic {
+        windows_base {
+            display-name = "QWERTY";
+            bindings = <
+                &kp EXCL     &kp Q          &kp W          &kp E                  &kp R                 &kp T                    &none               &kp Y        &kp U               &kp I              &kp O          &kp P            &kp LBKT
+                &kp ESC      &HRM_A(LGUI)   &HRM_S(LALT)   &HRM_D(LCTRL)          &HRM_F(LSHFT)         &kp G              &none &none &none         &kp H        &HRM_J(LSHFT)       &HRM_K(RCTRL)      &HRM_L(LALT)   &HRM_SEMI(RGUI)  &kp SQT
+                &skp LSHFT   &kp Z          &kp X          &kp C                  &kp V                 &kp B        &none       &none               &kp N        &kp M               &kp COMMA          &kp DOT        &kp SLASH        &skp RSHFT
+                                                           &lht NAVIGATION_W ESC  &lht NUMPAD_W BSPC    &lsd                                         &kp TAB      &lht SYMBOL_W SPACE &kp ENTER
+            >;
+        };
+
+        // missing: {}()[]
+        windows_symbol {
+             display-name = "SYMBOL";
+             bindings = <
+                 &kp GRAVE  &kp AMPS   &kp SQT   &kp DQT         &kp PLUS    &kp QMARK                      &none                  &kp GRAVE  &kp RSHFT  &kp RCTRL  &kp LALT   &kp RGUI   &none
+                 &kp HASH   &kp CARET  &kp EQUAL &kp UNDERSCORE  &kp DOLLAR  &kp STAR                 &none &none &none            &kp DQT    &kp BSPC   &kp TAB    &kp SPACE  &kp ENTER  &none
+                 &kp TILDE  &kp LT     &kp PIPE  &kp MINUS       &kp GT      &kp BSLH           &none       &none                  &kp SQT    &kp DEL    &kp COMMA  &kp DOT    &kp SLASH  &none
+                                                 &kp PERCENT     &kp COLON   &kp AT                                                &none      &none      &none
+             >;
+        };
+
+        windows_numpad {
+             display-name = "NUMPAD";
+             bindings = <
+                 &none        &kp ENTER    &kp BSPC   &kp TAB      &kp SPACE  &none                   &none           &kp PERCENT   &kp N7    &kp N8    &kp N9    &kp COLON &none
+                 &mo FN_W     &kp LGUI     &kp LALT   &kp LCTRL    &kp LSHFT  &none             &none &none &none     &kp PLUS      &kp N4    &kp N5    &kp N6    &kp MINUS &none
+                 &none        &none        &none      &none        &none      &none       &none       &none           &kp STAR      &kp N1    &kp N2    &kp N3    &kp SLASH &none
+                                                      &none        &none      &none                                   &kp COMMA     &kp N0    &kp DOT
+             >;
+        };
+
+        windows_navigation {
+             display-name = "NAV";
+             bindings = <
+                 &trans      &trans      &trans      &trans      &trans      &trans                    &none            &kp K_REDO    &kp K_PASTE  &kp K_COPY  &kp K_CUT &kp K_UNDO   &trans
+                 &trans      &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &kp PSCRN           &none &none &none      &kp LEFT      &kp DOWN     &kp UP      &kp RIGHT &trans       &trans
+                 &trans      &trans      &trans      &trans      &trans      &trans        &none       &none            &kp HOME      &kp PG_DN    &kp PG_UP   &kp END   &trans       &trans
+                                                     &trans      &trans      &trans                                     &trans        &trans       &trans
+             >;
+        };
+
+        windows_function {
+            display-name = "function";
+             bindings = <
+                 &none      &kp ENTER    &kp BSPC   &kp TAB      &kp SPACE  &none                   &none           &none         &kp F7    &kp F8    &kp F9    &none &none
+                 &none      &kp LGUI     &kp LALT   &kp LCTRL    &kp LSHFT  &none             &none &none &none     &none         &kp F4    &kp F5    &kp F6    &none &none
+                 &none      &none        &none      &none        &none      &none       &none       &none           &none         &kp F1    &kp F2    &kp F3    &none &none
+                                                    &none        &none      &none                                   &kp F10       &kp F11   &kp F12
+             >;
+        };
+
+        magic {
              display-name = "magic";
              bindings = <
-                &bt BT_CLR  &none &none &none &none &none               &none          &none &none &none &none &none &none
-                &bootloader &none &none &none &none &none         &none &none &none    &none &none &none &none &none &bootloader
-                &none       &none &none &none &none &none   &none       &none          &none &none &none &none &none &none
-                                  &bt_0 &bt_1 &bt_2                                    &bt_3 &bt_4 &out OUT_USB
+                &BT_CLR     &none &to WINDOWS &none &none &none               &none          &none &none &none &none     &none &none
+                &bootloader &none &none       &none &none &none         &none &none &none    &none &none &none &tp LINUX &none &bootloader
+                &none       &none &none       &none &none &none   &none       &none          &none &none &none &none     &none &none
+                                  &bt_0       &bt_1 &bt_2                                    &bt_3 &bt_4 &out OUT_USB
              >;
         };
 
@@ -516,6 +576,5 @@ behaviors {
                                   &none &none &none                              &none &none &none
              >;
         };
-
     };
 };
