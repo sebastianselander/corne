@@ -54,7 +54,7 @@
 
 // Layers windows
 #define BASE_W 5
-#define SYMBOW_L 6
+#define SYMBOW_W 6
 #define NUMPAD_W 7
 #define NAVIGATION_W 8
 #define FN_W 9
