@@ -270,7 +270,7 @@
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <14 10>;
             bindings = <&ao_macro>;
-            layers = <0>;
+            layers = <BASE>;;
             require-prior-idle-ms = <100>;
         };
 
@@ -278,7 +278,7 @@
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <14 3>;
             bindings = <&ae_macro>;
-            layers = <0>;
+            layers = <BASE>;;
             require-prior-idle-ms = <100>;
         };
 
@@ -286,7 +286,7 @@
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <3 10>;
             bindings = <&oe_macro>;
-            layers = <0>;
+            layers = <BASE>;;
             require-prior-idle-ms = <100>;
         };
 
@@ -294,14 +294,14 @@
             timeout-ms = <100>;
             key-positions = <0 1 2>;
             bindings = <&mo MAGIC>;
-            layers = <0>;
+            layers = <BASE>;;
             require-prior-idle-ms = <100>;
         };
         combo_magic_right {
             timeout-ms = <100>;
             key-positions = <10 11 12>;
             bindings = <&mo MAGIC>;
-            layers = <0>;
+            layers = <BASE>;;
             require-prior-idle-ms = <100>;
         };
       };
