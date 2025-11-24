@@ -326,24 +326,6 @@ behaviors {
         tapping-term-ms = <300>;
         bindings = <&skp LSHIFT>, <&caps_word>;
     };
-    rpi: require_prior_idle {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
-        tapping-term-ms = <200>;
-        quick-tap-ms = <QUICKTAP>;
-        require-prior-idle-ms = <100>;
-        bindings = <&kp>, <&kp>;
-    };
-    rpil: require_prior_idle_layer {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
-        tapping-term-ms = <200>;
-        quick-tap-ms = <QUICKTAP>;
-        require-prior-idle-ms = <100>;
-        bindings = <&mo>, <&kp>;
-    };
     hrm_left_pinky: hrm_left_pinky {
         compatible = "zmk,behavior-hold-tap";
         flavor = "tap-preferred";
