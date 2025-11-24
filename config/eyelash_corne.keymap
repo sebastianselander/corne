@@ -270,7 +270,7 @@
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <14 10>;
             bindings = <&ao_macro>;
-            layers = <BASE>;;
+            layers = <BASE>;
             require-prior-idle-ms = <100>;
         };
 
