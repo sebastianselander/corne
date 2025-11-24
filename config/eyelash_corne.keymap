@@ -35,16 +35,6 @@
 
 #define THUMB_KEYS 36 37 38 39 40 41
 
-#define QUICKTAP 150
-#define QUICKTAP_PINKY 200
-#define QUICKTAP_RING 150
-#define QUICKTAP_MIDDLE 150
-#define QUICKTAP_INDEX 150
-#define INDEX_TAPPINGTERM 150
-#define MIDDLE_TAPPINGTERM 190
-#define RING_TAPPINGTERM 220
-#define PINKY_TAPPINGTERM 240
-
 #define BASE 0
 #define SYMBOL 1
 #define NUMPAD 2
@@ -306,6 +296,18 @@
       };
 
 
+#define HRM_FLAVOR "balanced" 
+#define QUICKTAP 150
+#define QUICKTAP_PINKY 175
+#define QUICKTAP_RING 175
+#define QUICKTAP_MIDDLE 175
+#define QUICKTAP_INDEX 175
+#define INDEX_TAPPINGTERM 280
+#define MIDDLE_TAPPINGTERM 280
+#define RING_TAPPINGTERM 280
+#define PINKY_TAPPINGTERM 280
+#define REQUIRE_PRIOR_IDLE_HRM 150
+
 
 behaviors {
     lt {
@@ -327,82 +329,90 @@ behaviors {
     };
     hrm_left_pinky: hrm_left_pinky {
         compatible = "zmk,behavior-hold-tap";
-        flavor = "tap-preferred";
+        flavor = HRM_FLAVOR;
         hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <PINKY_TAPPINGTERM>;
         quick-tap-ms = <250>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_HRM>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
     };
     hrm_left_ring: hrm_left_ring {
         compatible = "zmk,behavior-hold-tap";
-        flavor = "tap-preferred";
+        flavor = HRM_FLAVOR;
         hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <RING_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_RING>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_HRM>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
     };
     hrm_left_middle: hrm_left_middle {
         compatible = "zmk,behavior-hold-tap";
-        flavor = "tap-preferred";
+        flavor = HRM_FLAVOR;
         hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <MIDDLE_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_MIDDLE>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_HRM>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
     };
     hrm_left_index: hrm_left_index {
         compatible = "zmk,behavior-hold-tap";
-        flavor = "tap-preferred";
+        flavor = HRM_FLAVOR;
         hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <INDEX_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_INDEX>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_HRM>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
     };
 
     hrm_right_pinky: hrm_right_pinky {
         compatible = "zmk,behavior-hold-tap";
-        flavor = "tap-preferred";
+        flavor = HRM_FLAVOR;
         hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <PINKY_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_PINKY>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_HRM>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
     };
     hrm_right_ring: hrm_right_ring {
         compatible = "zmk,behavior-hold-tap";
-        flavor = "tap-preferred";
+        flavor = HRM_FLAVOR;
         hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <RING_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_RING>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_HRM>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
     };
     hrm_right_middle: hrm_right_middle {
         compatible = "zmk,behavior-hold-tap";
-        flavor = "tap-preferred";
+        flavor = HRM_FLAVOR;
         hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <MIDDLE_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_MIDDLE>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_HRM>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
     };
     hrm_right_index: hrm_right_index {
         compatible = "zmk,behavior-hold-tap";
-        flavor = "tap-preferred";
+        flavor = HRM_FLAVOR;
         hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
         tapping-term-ms = <INDEX_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_INDEX>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_HRM>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
     };
