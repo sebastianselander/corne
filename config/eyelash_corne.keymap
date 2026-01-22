@@ -17,31 +17,27 @@
     // | 0  1  2  3  4  5       |    6     7  8  9  10 11 12 |
     // | 13 14 15 16 17 18      | 19 20 21 22 23 24 25 26 27 |
     // | 28 29 30 31 32 33 34   |    35    36 37 38 39 40 41 |
-    // |          42 43 44      |          45 45 47          |
+    // |          42 43 44      |          45 46 47          |
     // |------------------------|----------------------------|
 
 
 #define LEFT_HAND_KEYS    \
         0  1  2  3  4  5  \
-        12 13 14 15 16 17 \
-        24 25 26 27 28 29 \
-                 36 37 38
+        13 14 15 16 17 18 \
+        28 29 30 31 32 33 \
 
 #define RIGHT_HAND_KEYS   \
-        6  7  8  9  10 11 \
-        18 19 20 21 22 23 \
-        30 31 32 33 34 35 \
-        39 40 41
+        7  8  9  10 11 12 \
+        22 23 24 25 26 27 \
+        36 37 38 39 40 41 \
 
-#define THUMB_KEYS 36 37 38 39 40 41
+#define THUMB_KEYS 42 43 44 45 46 47
 
-#define QUICKTAP 130
-
+#define QUICKTAP 150
 #define QUICKTAP_PINKY 180
 #define QUICKTAP_RING 130
 #define QUICKTAP_MIDDLE 130
 #define QUICKTAP_INDEX 130
-
 #define INDEX_TAPPINGTERM 150
 #define MIDDLE_TAPPINGTERM 190
 #define RING_TAPPINGTERM 220
@@ -49,22 +45,26 @@
 
 #define BASE 0
 #define SYMBOL 1
-#define NUMPAD 2
-#define NAVIGATION 3
-#define FN 4
-#define MAGIC 4
-#define NONE 5
+#define BRACKETS 2
+#define NUMPAD 3
+#define NAVIGATION 4
+#define FN 5
+#define MAGIC 6
+#define NONE 7
+
 #define COMBO_TIMEOUT 45
 
-#define HRM_A(key) hrm_left_pinky key A
-#define HRM_S(key) hrm_left_ring key S
-#define HRM_D(key) hrm_left_middle key D
-#define HRM_F(key) hrm_left_index key F
+// TODO: Rename 
 
-#define HRM_J(key) hrm_right_pinky key J
-#define HRM_K(key) hrm_right_ring key K
-#define HRM_L(key) hrm_right_middle key L
-#define HRM_SEMI(key) hrm_right_index key SEMI
+#define HRM_A(modifier,key) hrm_left_pinky modifier key
+#define HRM_S(modifier,key) hrm_left_ring modifier key
+#define HRM_D(modifier,key) hrm_left_middle modifier key
+#define HRM_F(modifier,key) hrm_left_index modifier key
+
+#define HRM_J(modifier,key) hrm_right_pinky modifier key
+#define HRM_K(modifier,key) hrm_right_ring modifier key
+#define HRM_L(modifier,key) hrm_right_middle modifier key
+#define HRM_SEMI(modifier,key) hrm_right_index modifier key
 
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
@@ -179,6 +179,21 @@
                 , <&kp SQT>
                 , <&macro_release>
                 , <&kp LSHFT>;
+        };
+        magic_macro: magic_macro {
+            label = "&magic_macro";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>
+                     , <&kp M>
+                     , <&macro_tap>
+                     , <&kp A>
+                     , <&macro_tap>
+                     , <&kp G>
+                     , <&macro_tap>
+                     , <&kp I>
+                     , <&macro_tap>
+                     , <&kp C>; 
         };
     };
 
@@ -424,31 +439,42 @@ behaviors {
         layer_base {
             display-name = "QWERTY";
             bindings = <
-                &kp EXCL     &kp Q          &kp W          &kp E                &kp R                 &kp T                    &none               &kp Y        &kp U             &kp I              &kp O          &kp P            &kp LBKT
-                &kp ESC      &HRM_A(LGUI)   &HRM_S(LALT)   &HRM_D(LCTRL)        &HRM_F(LSHFT)         &kp G              &none &none &none         &kp H        &HRM_J(LSHFT)     &HRM_K(RCTRL)      &HRM_L(LALT)   &HRM_SEMI(RGUI)  &kp SQT
-                &skp LSHFT   &kp Z          &kp X          &kp C                &kp V                 &kp B        &none       &none               &kp N        &kp M             &kp COMMA          &kp DOT        &kp SLASH        &skp RSHFT
-                                                           &lht NAVIGATION ESC  &lht NUMPAD BSPC      &lsd                                         &kp TAB      &lht SYMBOL SPACE &kp ENTER
+                &kp EXCL     &kp Q          &kp W          &kp E                &kp R                 &kp T                    &none               &kp Y        &kp U             &kp I              &kp O          &kp P                 &kp LBKT
+                &kp ESC      &HRM_A(LGUI,A) &HRM_S(LALT,S) &HRM_D(LCTRL,D)      &HRM_F(LSHFT,F)       &kp G              &none &none &none         &kp H        &HRM_J(LSHFT,J)   &HRM_K(RCTRL,K)    &HRM_L(LALT,L) &HRM_SEMI(RGUI,SEMI)  &kp SQT
+                &skp LSHFT   &kp Z          &kp X          &kp C                &kp V                 &kp B        &none       &none               &kp N        &kp M             &kp COMMA          &kp DOT        &kp SLASH             &skp RSHFT
+                                                           &lht NAVIGATION ESC  &lht NUMPAD BSPC      &lsd                                         &kp TAB      &lht SYMBOL SPACE &lht BRACKETS ENTER
             >;
         };
+
 
         // missing: {}()[]
         layer_symbol {
              display-name = "SYMBOL";
              bindings = <
-                 &kp GRAVE  &kp AMPS   &kp SQT   &kp DQT         &kp PLUS    &kp QMARK                      &none                  &kp GRAVE  &kp RSHFT  &kp RCTRL  &kp LALT   &kp RGUI   &none
-                 &kp HASH   &kp CARET  &kp EQUAL &kp UNDERSCORE  &kp DOLLAR  &kp STAR                 &none &none &none            &kp DQT    &kp BSPC   &kp TAB    &kp SPACE  &kp ENTER  &none
-                 &kp TILDE  &kp LT     &kp PIPE  &kp MINUS       &kp GT      &kp BSLH           &none       &none                  &kp SQT    &kp DEL    &kp COMMA  &kp DOT    &kp SLASH  &none
-                                                 &kp PERCENT     &kp COLON   &kp AT                                                &none      &none      &none
+                 &kp GRAVE  &kp AMPS   &kp SQT   &kp DQT         &kp PLUS    &kp QMARK                      &none                  &kp GRAVE  &none              &none              &none               &none                  &none
+                 &kp HASH   &kp CARET  &kp EQUAL &kp UNDERSCORE  &kp DOLLAR  &kp STAR                 &none &none &none            &kp DQT    &HRM_J(LSHFT,BSPC) &HRM_K(RCTRL,TAB)  &HRM_L(LALT,SPACE)  &HRM_SEMI(RGUI,ENTER)  &none
+                 &kp TILDE  &kp LT     &kp PIPE  &kp MINUS       &kp GT      &kp BSLH           &none       &none                  &kp SQT    &kp DEL            &kp COMMA          &kp DOT             &kp SLASH              &none
+                                                 &kp PERCENT     &kp COLON   &kp AT                                                &none      &none              &none
+             >;
+        };
+
+        layer_brackets {
+             display-name = "brackets";
+             bindings = <
+                &none &none &none &kp LBRC &kp RBRC &none                &none         &none &none              &none             &none              &none                 &none
+                &none &none &none &kp LPAR &kp RPAR &none          &none &none &none   &none &HRM_J(LSHFT,BSPC) &HRM_K(RCTRL,TAB) &HRM_L(LALT,SPACE) &HRM_SEMI(RGUI,ENTER) &none
+                &none &none &none &kp LBKT &kp RBKT &none    &none       &none         &none &none              &none             &none              &none                 &none
+                                        &none &none &none                              &none &none &none
              >;
         };
 
         layer_numpad {
              display-name = "NUMPAD";
              bindings = <
-                 &none      &kp ENTER    &kp BSPC   &kp TAB      &kp SPACE  &none                   &none           &kp PERCENT   &kp N7    &kp N8    &kp N9    &kp COLON &none
-                 &mo FN     &kp LGUI     &kp LALT   &kp LCTRL    &kp LSHFT  &none             &none &none &none     &kp PLUS      &kp N4    &kp N5    &kp N6    &kp MINUS &none
-                 &none      &none        &none      &none        &none      &none       &none       &none           &kp STAR      &kp N1    &kp N2    &kp N3    &kp SLASH &none
-                                                    &none        &none      &none                                   &kp COMMA     &kp N0    &kp DOT
+                 &none  &none              &none              &none             &none              &none                   &none           &kp PERCENT   &kp N7    &kp N8    &kp N9    &kp COLON &none
+                 &mo FN &HRM_A(LGUI,ENTER) &HRM_S(LALT,SPACE) &HRM_D(LCTRL,TAB) &HRM_F(LSHFT,BSPC) &none             &none &none &none     &kp PLUS      &kp N4    &kp N5    &kp N6    &kp MINUS &none
+                 &none  &none              &none              &none             &none              &none   &none           &none           &kp STAR      &kp N1    &kp N2    &kp N3    &kp SLASH &none
+                                                              &none             &none              &none                                   &kp COMMA     &kp N0    &kp DOT
              >;
         };
 
@@ -475,7 +501,7 @@ behaviors {
         layer_magic {
              display-name = "magic";
              bindings = <
-                &bt BT_CLR  &none &none &none &none &none               &none          &none &none &none &none &none &none
+                &bt BT_CLR  &none &none &none &none &none               &none          &none &none &none &none &none &bt BT_CLR_ALL
                 &bootloader &none &none &none &none &none         &none &none &none    &none &none &none &none &none &bootloader
                 &none       &none &none &none &none &none   &none       &none          &none &none &none &none &none &none
                                   &bt_0 &bt_1 &bt_2                                    &bt_3 &bt_4 &out OUT_USB
@@ -485,12 +511,14 @@ behaviors {
         layer_none {
              display-name = "none";
              bindings = <
-                &none &none &none &none &none &none                &none         &none &none &none &none &none &none
-                &none &none &none &none &none &none          &none &none &none   &none &none &none &none &none &none
-                &none &none &none &none &none &none    &none       &none         &none &none &none &none &none &none
-                                  &none &none &none                              &none &none &none
+                &none &none &none &none &none &none                &none         &none        &none &none &none &none &none
+                &none &none &none &none &none &magic_macro   &none &none &none   &magic_macro &none &none &none &none &none
+                &none &none &none &none &none &none    &none       &none         &none        &none &none &none &none &none
+                                  &none &none &none                              &none        &none &none
              >;
         };
 
     };
 };
+
+
