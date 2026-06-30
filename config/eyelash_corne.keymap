@@ -365,7 +365,7 @@ behaviors {
                 &none &none &none &kp LBRC &kp RBRC &none                &none         &none &none              &none             &none              &none                 &none
                 &none &none &none &kp LPAR &kp RPAR &none          &none &none &none   &none &HRM_J(LSHFT,BSPC) &HRM_K(RCTRL,TAB) &HRM_L(LALT,SPACE) &HRM_SEMI(RGUI,ENTER) &none
                 &none &none &none &kp LBKT &kp RBKT &none    &none       &none         &none &none              &none             &none              &none                 &none
-                                        &none &none &none                              &none &none &none
+                                     &none &kp DEL  &none                              &none &none &none
              >;
         };
 
