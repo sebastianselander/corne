@@ -52,9 +52,8 @@
 #define MAGIC 6
 #define NONE 7
 
-#define COMBO_TIMEOUT 45
-#define COMBO_PRIOR_IDLE 150
-#define COMBO_QUICK_TAP 75
+#define COMBO_TIMEOUT 40
+#define COMBO_PRIOR_IDLE 200
 
 // TODO: Rename 
 
@@ -207,7 +206,6 @@
             bindings = <&ao_macro>;
             layers = <BASE>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
-            quick-tap-ms = <COMBO_QUICK_TAP>;
         };
         combo_ae {
             timeout-ms = <COMBO_TIMEOUT>;
@@ -215,7 +213,6 @@
             bindings = <&ae_macro>;
             layers = <BASE>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
-            quick-tap-ms = <COMBO_QUICK_TAP>;
         };
 
         combo_oe {
@@ -224,7 +221,43 @@
             bindings = <&oe_macro>;
             layers = <BASE>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
-            quick-tap-ms = <COMBO_QUICK_TAP>;
+        };
+        combo_braces_left {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <3 4>;
+            bindings = <&kp LBRC>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+        };
+        combo_parens_left {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <16 17>;
+            bindings = <&kp LPAR>;
+            layers = <BASE>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+        };
+        combo_bracket_left {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <31 32>;
+            bindings = <&kp LBKT>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+        };
+        combo_braces_right {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <8 9>;
+            bindings = <&kp RBRC>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+        };
+        combo_parens_right {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <23 24>;
+            bindings = <&kp RPAR>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+        };
+        combo_bracket_right {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <37 38>;
+            bindings = <&kp RBKT>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
       };
 
