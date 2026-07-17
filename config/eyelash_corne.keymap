@@ -54,6 +54,7 @@
 
 #define COMBO_TIMEOUT 45
 #define COMBO_PRIOR_IDLE 150
+#define COMBO_QUICK_TAP 75
 
 // TODO: Rename 
 
@@ -206,6 +207,7 @@
             bindings = <&ao_macro>;
             layers = <BASE>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+            quick-tap-ms = <COMBO_QUICK_TAP>;
         };
         combo_ae {
             timeout-ms = <COMBO_TIMEOUT>;
@@ -213,6 +215,7 @@
             bindings = <&ae_macro>;
             layers = <BASE>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+            quick-tap-ms = <COMBO_QUICK_TAP>;
         };
 
         combo_oe {
@@ -221,6 +224,7 @@
             bindings = <&oe_macro>;
             layers = <BASE>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+            quick-tap-ms = <COMBO_QUICK_TAP>;
         };
       };
 
