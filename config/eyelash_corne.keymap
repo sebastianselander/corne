@@ -242,12 +242,6 @@ behaviors {
         quick-release;
         ignore-modifiers;
     };
-    lsd: left_shift_dance {
-        compatible = "zmk,behavior-tap-dance";
-        #binding-cells = <0>;
-        tapping-term-ms = <300>;
-        bindings = <&skp LSHIFT>, <&caps_word>;
-    };
     hrm_left_pinky: hrm_left_pinky {
         compatible = "zmk,behavior-hold-tap";
         flavor = "tap-preferred";
