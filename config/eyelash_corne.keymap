@@ -259,6 +259,18 @@
             bindings = <&kp RBKT>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
+        combo_caps_word_left {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <29 30>;
+            bindings = <&caps_word>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+        };
+        combo_caps_word_right {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <39 40>;
+            bindings = <&caps_word>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+        };
       };
 
 
