@@ -84,6 +84,11 @@
     trigger-period-ms = <16>;
 };
 
+&caps_word {
+    /delete-property/ ignore-modifiers;
+};
+
+
 
 / {
     macros {
