@@ -264,6 +264,11 @@
             bindings = <&kp RBKT>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
+        combo_caps_word {
+            timeout-ms = <COMBO_TIMEOUT>; 
+            key-positions = <44 45>;
+            bindings = <&caps_word>;
+        };
       };
 
 
