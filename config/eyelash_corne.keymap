@@ -400,9 +400,9 @@ behaviors {
         layer_symbol {
              display-name = "SYMBOL";
              bindings = <
-                 &kp EXCL  &kp AMPS   &kp SQT   &kp DQT         &kp PLUS    &kp QMARK                      &none                  &kp GRAVE  &none              &none              &none               &none                  &none
+                 &kp EXCL   &kp MINUS   &kp SQT  &kp DQT         &kp PLUS    &kp QMARK                      &none                  &kp GRAVE  &none              &none              &none               &none                  &none
                  &kp HASH   &kp CARET  &kp EQUAL &kp UNDERSCORE  &kp DOLLAR  &kp STAR                 &none &none &none            &kp DQT    &HRM_J(LSHFT,BSPC) &HRM_K(RCTRL,TAB)  &HRM_L(LALT,SPACE)  &HRM_SEMI(RGUI,ENTER)  &none
-                 &kp TILDE  &kp LT     &kp PIPE  &kp MINUS       &kp GT      &kp BSLH           &none       &none                  &kp SQT    &kp DEL            &kp COMMA          &kp DOT             &kp SLASH              &none
+                 &kp TILDE  &kp LT     &kp PIPE  &kp AMPS        &kp GT      &kp BSLH           &none       &none                  &kp SQT    &kp DEL            &kp COMMA          &kp DOT             &kp SLASH              &none
                                                  &kp PERCENT     &kp COLON   &kp AT                                                &none      &none              &none
              >;
         };
