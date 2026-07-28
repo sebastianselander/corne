@@ -244,30 +244,36 @@
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <30 31>;
             bindings = <&kp LBKT>;
+            layers = <BASE>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_braces_right {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <9 10>;
             bindings = <&kp RBRC>;
+            layers = <BASE>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_parens_right {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <24 25>;
             bindings = <&kp RPAR>;
+            layers = <BASE>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_bracket_right {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <38 39>;
             bindings = <&kp RBKT>;
+            layers = <BASE>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_caps_word {
             timeout-ms = <COMBO_TIMEOUT>; 
             key-positions = <44 45>;
+            layers = <BASE>;
             bindings = <&caps_word>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
       };
 
