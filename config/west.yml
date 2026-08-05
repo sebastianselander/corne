@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: cormoran
       url-base: https://github.com/cormoran
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: eyelash_corne
       url: https://github.com/a741725193/zmk-new_corne
@@ -12,6 +14,9 @@ manifest:
       remote: cormoran
       revision: v0.3-branch+dya
       import: app/west.yml
+    - name: zmk-leader-key
+      remote: urob
+      revision: v0.3 # Should match ZMK release.
     - name: zmk-behavior-runtime-sensor-rotate
       remote: cormoran
       revision: main
