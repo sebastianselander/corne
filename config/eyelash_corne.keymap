@@ -231,41 +231,42 @@
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <3 4>;
             bindings = <&kp LBRC>;
+            layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_parens_left {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <16 17>;
             bindings = <&kp LPAR>;
-            layers = <BASE>;
+            layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_bracket_left {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <31 32>;
             bindings = <&kp LBKT>;
-            layers = <BASE>;
+            layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_braces_right {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <8 9>;
             bindings = <&kp RBRC>;
-            layers = <BASE>;
+            layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_parens_right {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <23 24>;
             bindings = <&kp RPAR>;
-            layers = <BASE>;
+            layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_bracket_right {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <37 38>;
             bindings = <&kp RBKT>;
-            layers = <BASE>;
+            layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_caps_word {
