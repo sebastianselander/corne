@@ -61,11 +61,13 @@
 #define HRM_S(modifier,key) hrm_left_ring modifier key
 #define HRM_D(modifier,key) hrm_left_middle modifier key
 #define HRM_F(modifier,key) hrm_left_index modifier key
+#define HRM_C(modifier,key) hrm_left_middle modifier key
 
-#define HRM_J(modifier,key) hrm_right_pinky modifier key
-#define HRM_K(modifier,key) hrm_right_ring modifier key
-#define HRM_L(modifier,key) hrm_right_middle modifier key
-#define HRM_SEMI(modifier,key) hrm_right_index modifier key
+#define HRM_J(modifier,key) hrm_right_index modifier key
+#define HRM_K(modifier,key) hrm_right_middle modifier key
+#define HRM_L(modifier,key) hrm_right_ring modifier key
+#define HRM_SEMI(modifier,key) hrm_right_pinky modifier key
+#define HRM_COMMA(modifier,key) hrm_right_middle modifier key
 
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
@@ -405,9 +407,9 @@ behaviors {
         layer_base {
             display-name = "QWERTY";
             bindings = <
-                &kp GRAVE   &kp Q          &kp W          &kp E                &kp R                 &kp T                    &none               &kp Y        &kp U             &kp I              &kp O          &kp P                 &mo MAGIC
-                &ao_macro   &HRM_A(LGUI,A) &HRM_S(LALT,S) &HRM_D(LCTRL,D)      &HRM_F(LSHFT,F)       &kp G              &none &none &none         &kp H        &HRM_J(LSHFT,J)   &HRM_K(RCTRL,K)    &HRM_L(LALT,L) &HRM_SEMI(RGUI,SEMI)  &oe_macro
-                &leader1    &kp Z          &kp X          &kp C                &kp V                 &kp B        &none       &none               &kp N        &kp M             &kp COMMA          &kp DOT        &kp SLASH             &ae_macro
+                &kp GRAVE   &kp Q          &kp W          &kp E                &kp R                 &kp T                    &none               &kp Y        &kp U             &kp I                       &kp O          &kp P                 &mo MAGIC
+                &ao_macro   &HRM_A(LGUI,A) &HRM_S(LALT,S) &HRM_D(LCTRL,D)      &HRM_F(LSHFT,F)       &kp G              &none &none &none         &kp H        &HRM_J(RSHFT,J)   &HRM_K(RCTRL,K)             &HRM_L(LALT,L) &HRM_SEMI(RGUI,SEMI)  &oe_macro
+                &leader1    &kp Z          &kp X          &HRM_C(LC(LSHFT),C)  &kp V                 &kp B        &none       &none               &kp N        &kp M             &HRM_COMMA(RC(RSHFT),COMMA) &kp DOT        &kp SLASH             &ae_macro
                                                           &lht NAVIGATION ESC  &lht NUMPAD BSPC      &lsd                                         &kp TAB      &lht SYMBOL SPACE &lht BRACKETS ENTER
 
             >;
