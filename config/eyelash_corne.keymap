@@ -447,10 +447,10 @@ behaviors {
         layer_navigation {
              display-name = "NAV";
              bindings = <
-                 &trans      &trans      &trans      &trans      &trans      &trans                    &none            &kp LS(Z)      &kp LC(V)    &kp LC(C)   &kp LC(X) &kp LC(LS(Z))  &trans
-                 &trans      &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &kp PSCRN           &none &none &none      &kp LEFT       &kp DOWN     &kp UP      &kp RIGHT &trans         &trans
-                 &trans      &trans      &trans      &LC(LS(C))  &LC(LS(V))  &trans        &none       &none            &kp HOME       &kp PG_DN    &kp PG_UP   &kp END   &trans         &trans
-                                                     &trans      &trans      &trans                                     &trans         &trans       &trans
+                 &trans      &trans      &trans      &trans        &trans        &trans                    &none            &kp LS(Z)      &kp LC(V)    &kp LC(C)   &kp LC(X) &kp LC(LS(Z))  &trans
+                 &trans      &kp LGUI    &kp LALT    &kp LCTRL     &kp LSHFT     &kp PSCRN           &none &none &none      &kp LEFT       &kp DOWN     &kp UP      &kp RIGHT &trans         &trans
+                 &trans      &trans      &trans      &kp LC(LS(C)) &kp LC(LS(V)) &trans        &none       &none            &kp HOME       &kp PG_DN    &kp PG_UP   &kp END   &trans         &trans
+                                                     &trans        &trans        &trans                                     &trans         &trans       &trans
              >;
         };
 
