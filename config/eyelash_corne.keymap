@@ -53,7 +53,7 @@
 #define NONE 7
 
 #define COMBO_TIMEOUT 50
-#define COMBO_PRIOR_IDLE 200
+#define COMBO_PRIOR_IDLE 150
 
 // TODO: Rename
 
