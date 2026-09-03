@@ -285,8 +285,76 @@
             layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
-
-
+        combo_zero {
+            timeout-ms = <COMBO_TIMEOUT>;   
+            key-positions = <43 46>;
+            bindings = <&kp N0>;
+            layers = <BASE SYMBOL>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+        };
+        combo_one {
+            timeout-ms = <COMBO_TIMEOUT>;   
+            key-positions = <43 37>;
+            bindings = <&kp N1>;
+            layers = <BASE SYMBOL>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+        };
+        combo_two {
+            timeout-ms = <COMBO_TIMEOUT>;   
+            key-positions = <43 38>;
+            bindings = <&kp N2>;
+            layers = <BASE SYMBOL>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+        };
+        combo_three {
+            timeout-ms = <COMBO_TIMEOUT>;   
+            key-positions = <43 39>;
+            bindings = <&kp N3>;
+            layers = <BASE SYMBOL>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+        };
+        combo_four {
+            timeout-ms = <COMBO_TIMEOUT>;   
+            key-positions = <43 23>;
+            bindings = <&kp N4>;
+            layers = <BASE SYMBOL>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+        };
+        combo_five {
+            timeout-ms = <COMBO_TIMEOUT>;   
+            key-positions = <43 24>;
+            bindings = <&kp N5>;
+            layers = <BASE SYMBOL>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+        };
+        combo_six {
+            timeout-ms = <COMBO_TIMEOUT>;   
+            key-positions = <43 25>;
+            bindings = <&kp N6>;
+            layers = <BASE SYMBOL>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+        };
+        combo_seven {
+            timeout-ms = <COMBO_TIMEOUT>;   
+            key-positions = <43 8>;
+            bindings = <&kp N7>;
+            layers = <BASE SYMBOL>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+        };
+        combo_eight {
+            timeout-ms = <COMBO_TIMEOUT>;   
+            key-positions = <43 9>;
+            bindings = <&kp N8>;
+            layers = <BASE SYMBOL>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+        };
+        combo_nine {
+            timeout-ms = <COMBO_TIMEOUT>;   
+            key-positions = <43 10>;
+            bindings = <&kp N9>;
+            layers = <BASE SYMBOL>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+        };
         combo_caps_word {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <44 45>;
