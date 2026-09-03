@@ -271,6 +271,22 @@
             layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
+        combo_double_quotes {
+            timeout-ms = <COMBO_TIMEOUT>;   
+            key-positions = <2 3>;
+            bindings = <&kp DQT>;
+            layers = <BASE SYMBOL NUMPAD>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+        };
+        combo_single_quotes {
+            timeout-ms = <COMBO_TIMEOUT>;   
+            key-positions = <9 10>;
+            bindings = <&kp SQT>;
+            layers = <BASE SYMBOL NUMPAD>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+        };
+
+
         combo_caps_word {
             timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <44 45>;
