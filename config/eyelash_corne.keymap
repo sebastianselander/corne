@@ -52,8 +52,9 @@
 #define MAGIC 6
 #define NONE 7
 
-#define COMBO_TIMEOUT 45
-#define COMBO_PRIOR_IDLE 160
+#define COMBO_TIMEOUT 40
+#define COMBO_PRIOR_IDLE 130
+
 
 // TODO: Rename
 
