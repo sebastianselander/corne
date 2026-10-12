@@ -494,7 +494,7 @@ behaviors {
             bindings = <
                 &kp GRAVE   &kp Q          &kp W          &kp E                &kp R                 &kp T                    &none               &kp Y        &kp U             &kp I                       &kp O          &kp P                 &mo MAGIC
                 &ao_macro   &HRM_A(LGUI,A) &HRM_S(LALT,S) &HRM_D(LCTRL,D)      &HRM_F(LSHFT,F)       &kp G              &none &none &none         &kp H        &HRM_J(RSHFT,J)   &HRM_K(RCTRL,K)             &HRM_L(LALT,L) &HRM_SEMI(RGUI,SEMI)  &oe_macro
-                &leader1    &kp Z          &kp X          &HRM_C(LC(LSHFT),C)  &kp V                 &kp B        &none       &none               &kp N        &kp M             &HRM_COMMA(RC(RSHFT),COMMA) &kp DOT        &kp SLASH             &ae_macro
+                &kp TILDE   &kp Z          &kp X          &HRM_C(LC(LSHFT),C)  &kp V                 &kp B        &none       &none               &kp N        &kp M             &HRM_COMMA(RC(RSHFT),COMMA) &kp DOT        &kp SLASH             &ae_macro
                                                           &lht NAVIGATION ESC  &lht NUMPAD BSPC      &lsd                                         &kp TAB      &lht SYMBOL SPACE &lht BRACKETS ENTER
 
             >;
