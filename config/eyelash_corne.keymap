@@ -38,10 +38,10 @@
 #define QUICKTAP_RING 130
 #define QUICKTAP_MIDDLE 130
 #define QUICKTAP_INDEX 130
-#define INDEX_TAPPINGTERM 250
-#define MIDDLE_TAPPINGTERM 270
-#define RING_TAPPINGTERM 290
-#define PINKY_TAPPINGTERM 290
+#define INDEX_TAPPINGTERM 150
+#define MIDDLE_TAPPINGTERM 170
+#define RING_TAPPINGTERM 190
+#define PINKY_TAPPINGTERM 210
 
 #define BASE 0
 #define SYMBOL 1
@@ -54,7 +54,6 @@
 
 #define COMBO_TIMEOUT 40
 #define COMBO_PRIOR_IDLE 140
-#define REQUIRE_PRIOR_IDLE_HRM 150
 
 
 // TODO: Rename
@@ -274,84 +273,84 @@
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_double_quotes {
-            timeout-ms = <COMBO_TIMEOUT>;
+            timeout-ms = <COMBO_TIMEOUT>;   
             key-positions = <2 3>;
             bindings = <&kp DQT>;
             layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_single_quotes {
-            timeout-ms = <COMBO_TIMEOUT>;
+            timeout-ms = <COMBO_TIMEOUT>;   
             key-positions = <9 10>;
             bindings = <&kp SQT>;
             layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_zero {
-            timeout-ms = <COMBO_TIMEOUT>;
+            timeout-ms = <COMBO_TIMEOUT>;   
             key-positions = <43 46>;
             bindings = <&kp N0>;
             layers = <BASE SYMBOL>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_one {
-            timeout-ms = <COMBO_TIMEOUT>;
+            timeout-ms = <COMBO_TIMEOUT>;   
             key-positions = <43 37>;
             bindings = <&kp N1>;
             layers = <BASE SYMBOL>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_two {
-            timeout-ms = <COMBO_TIMEOUT>;
+            timeout-ms = <COMBO_TIMEOUT>;   
             key-positions = <43 38>;
             bindings = <&kp N2>;
             layers = <BASE SYMBOL>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_three {
-            timeout-ms = <COMBO_TIMEOUT>;
+            timeout-ms = <COMBO_TIMEOUT>;   
             key-positions = <43 39>;
             bindings = <&kp N3>;
             layers = <BASE SYMBOL>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_four {
-            timeout-ms = <COMBO_TIMEOUT>;
+            timeout-ms = <COMBO_TIMEOUT>;   
             key-positions = <43 23>;
             bindings = <&kp N4>;
             layers = <BASE SYMBOL>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_five {
-            timeout-ms = <COMBO_TIMEOUT>;
+            timeout-ms = <COMBO_TIMEOUT>;   
             key-positions = <43 24>;
             bindings = <&kp N5>;
             layers = <BASE SYMBOL>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_six {
-            timeout-ms = <COMBO_TIMEOUT>;
+            timeout-ms = <COMBO_TIMEOUT>;   
             key-positions = <43 25>;
             bindings = <&kp N6>;
             layers = <BASE SYMBOL>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_seven {
-            timeout-ms = <COMBO_TIMEOUT>;
+            timeout-ms = <COMBO_TIMEOUT>;   
             key-positions = <43 8>;
             bindings = <&kp N7>;
             layers = <BASE SYMBOL>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_eight {
-            timeout-ms = <COMBO_TIMEOUT>;
+            timeout-ms = <COMBO_TIMEOUT>;   
             key-positions = <43 9>;
             bindings = <&kp N8>;
             layers = <BASE SYMBOL>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_nine {
-            timeout-ms = <COMBO_TIMEOUT>;
+            timeout-ms = <COMBO_TIMEOUT>;   
             key-positions = <43 10>;
             bindings = <&kp N9>;
             layers = <BASE SYMBOL>;
@@ -365,6 +364,8 @@
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
       };
+
+
 
 behaviors {
     lt {
@@ -386,10 +387,9 @@ behaviors {
     };
     hrm_left_pinky: hrm_left_pinky {
         compatible = "zmk,behavior-hold-tap";
-        flavor = "balanced";
+        flavor = "tap-preferred";
         hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
-        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_HRM>;
         tapping-term-ms = <PINKY_TAPPINGTERM>;
         quick-tap-ms = <250>;
         #binding-cells = <2>;
@@ -397,10 +397,9 @@ behaviors {
     };
     hrm_left_ring: hrm_left_ring {
         compatible = "zmk,behavior-hold-tap";
-        flavor = "balanced";
+        flavor = "tap-preferred";
         hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
-        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_HRM>;
         tapping-term-ms = <RING_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_RING>;
         #binding-cells = <2>;
@@ -408,10 +407,9 @@ behaviors {
     };
     hrm_left_middle: hrm_left_middle {
         compatible = "zmk,behavior-hold-tap";
-        flavor = "balanced";
+        flavor = "tap-preferred";
         hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
-        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_HRM>;
         tapping-term-ms = <MIDDLE_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_MIDDLE>;
         #binding-cells = <2>;
@@ -419,10 +417,9 @@ behaviors {
     };
     hrm_left_index: hrm_left_index {
         compatible = "zmk,behavior-hold-tap";
-        flavor = "balanced";
+        flavor = "tap-preferred";
         hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
-        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_HRM>;
         tapping-term-ms = <INDEX_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_INDEX>;
         #binding-cells = <2>;
@@ -431,10 +428,9 @@ behaviors {
 
     hrm_right_pinky: hrm_right_pinky {
         compatible = "zmk,behavior-hold-tap";
-        flavor = "balanced";
+        flavor = "tap-preferred";
         hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
-        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_HRM>;
         tapping-term-ms = <PINKY_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_PINKY>;
         #binding-cells = <2>;
@@ -442,10 +438,9 @@ behaviors {
     };
     hrm_right_ring: hrm_right_ring {
         compatible = "zmk,behavior-hold-tap";
-        flavor = "balanced";
+        flavor = "tap-preferred";
         hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
-        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_HRM>;
         tapping-term-ms = <RING_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_RING>;
         #binding-cells = <2>;
@@ -453,10 +448,9 @@ behaviors {
     };
     hrm_right_middle: hrm_right_middle {
         compatible = "zmk,behavior-hold-tap";
-        flavor = "balanced";
+        flavor = "tap-preferred";
         hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
-        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_HRM>;
         tapping-term-ms = <MIDDLE_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_MIDDLE>;
         #binding-cells = <2>;
@@ -464,10 +458,9 @@ behaviors {
     };
     hrm_right_index: hrm_right_index {
         compatible = "zmk,behavior-hold-tap";
-        flavor = "balanced";
+        flavor = "tap-preferred";
         hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release; // wait for other home row mods
-        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_HRM>;
         tapping-term-ms = <INDEX_TAPPINGTERM>;
         quick-tap-ms = <QUICKTAP_INDEX>;
         #binding-cells = <2>;
