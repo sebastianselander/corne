@@ -38,10 +38,10 @@
 #define QUICKTAP_RING 130
 #define QUICKTAP_MIDDLE 130
 #define QUICKTAP_INDEX 130
-#define INDEX_TAPPINGTERM 150
-#define MIDDLE_TAPPINGTERM 170
-#define RING_TAPPINGTERM 190
-#define PINKY_TAPPINGTERM 210
+#define INDEX_TAPPINGTERM 200
+#define MIDDLE_TAPPINGTERM 230
+#define RING_TAPPINGTERM 240
+#define PINKY_TAPPINGTERM 260
 
 #define BASE 0
 #define SYMBOL 1
@@ -273,84 +273,84 @@
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_double_quotes {
-            timeout-ms = <COMBO_TIMEOUT>;   
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <2 3>;
             bindings = <&kp DQT>;
             layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_single_quotes {
-            timeout-ms = <COMBO_TIMEOUT>;   
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <9 10>;
             bindings = <&kp SQT>;
             layers = <BASE SYMBOL NUMPAD>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_zero {
-            timeout-ms = <COMBO_TIMEOUT>;   
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <43 46>;
             bindings = <&kp N0>;
             layers = <BASE SYMBOL>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_one {
-            timeout-ms = <COMBO_TIMEOUT>;   
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <43 37>;
             bindings = <&kp N1>;
             layers = <BASE SYMBOL>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_two {
-            timeout-ms = <COMBO_TIMEOUT>;   
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <43 38>;
             bindings = <&kp N2>;
             layers = <BASE SYMBOL>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_three {
-            timeout-ms = <COMBO_TIMEOUT>;   
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <43 39>;
             bindings = <&kp N3>;
             layers = <BASE SYMBOL>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_four {
-            timeout-ms = <COMBO_TIMEOUT>;   
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <43 23>;
             bindings = <&kp N4>;
             layers = <BASE SYMBOL>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_five {
-            timeout-ms = <COMBO_TIMEOUT>;   
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <43 24>;
             bindings = <&kp N5>;
             layers = <BASE SYMBOL>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_six {
-            timeout-ms = <COMBO_TIMEOUT>;   
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <43 25>;
             bindings = <&kp N6>;
             layers = <BASE SYMBOL>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_seven {
-            timeout-ms = <COMBO_TIMEOUT>;   
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <43 8>;
             bindings = <&kp N7>;
             layers = <BASE SYMBOL>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_eight {
-            timeout-ms = <COMBO_TIMEOUT>;   
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <43 9>;
             bindings = <&kp N8>;
             layers = <BASE SYMBOL>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
         };
         combo_nine {
-            timeout-ms = <COMBO_TIMEOUT>;   
+            timeout-ms = <COMBO_TIMEOUT>;
             key-positions = <43 10>;
             bindings = <&kp N9>;
             layers = <BASE SYMBOL>;
